@@ -6,7 +6,7 @@
       "audioFolder": "p1",
       "card_back_txt": "Grade 1",
       "count": "155 words",
-      "image": "/assets/p1.webp"
+      "image": "/assets/01_p1.webp"
     },
     {
       "name": "grade2",
@@ -14,7 +14,7 @@
       "audioFolder": "p2",
       "card_back_txt": "Grade 2",
       "count": "159 words",
-      "image": "/assets/p2.webp"
+      "image": "/assets/02_p2.webp"
     },
     {
       "name": "grade3",
@@ -22,7 +22,7 @@
       "audioFolder": "p3",
       "card_back_txt": "Grade 3",
       "count": "154 words",
-      "image": "/assets/p3.webp"
+      "image": "/assets/03_p3.webp"
     },
     {
       "name": "grade4",
@@ -30,7 +30,7 @@
       "audioFolder": "p4",
       "card_back_txt": "Grade 4",
       "count": "255 words",
-      "image": "/assets/p4.webp"
+      "image": "/assets/04_p4.webp"
     },
     {
       "name": "grade5",
@@ -38,7 +38,7 @@
       "audioFolder": "p5",
       "card_back_txt": "Grade 5",
       "count": "254 words",
-      "image": "/assets/p5.webp"
+      "image": "/assets/05_p5.webp"
     },
     {
       "name": "grade6",
@@ -46,7 +46,7 @@
       "audioFolder": "p6",
       "card_back_txt": "Grade 6",
       "count": "250 words",
-      "image": "/assets/p6.webp"
+      "image": "/assets/06_p6.webp"
     },
     {
       "name": "day",
@@ -54,7 +54,7 @@
       "audioFolder": "day",
       "card_back_txt": "Days",
       "count": "7 words",
-      "image": "/assets/1-day.webp"
+      "image": "/assets/07_day.webp"
     },
     {
       "name": "month",
@@ -62,7 +62,7 @@
       "audioFolder": "month",
       "card_back_txt": "Months",
       "count": "12 words",
-      "image": "/assets/2-month.webp"
+      "image": "/assets/08_month.webp"
     },
     {
       "name": "color",
@@ -70,7 +70,7 @@
       "audioFolder": "color",
       "card_back_txt": "Colors",
       "count": "50 words",
-      "image": "/assets/3-color.webp"
+      "image": "/assets/09_color.webp"
     },
     {
       "name": "verb",
@@ -78,7 +78,7 @@
       "audioFolder": "verb",
       "card_back_txt": "Verbs",
       "count": "50 words",
-      "image": "/assets/4-verb.webp"
+      "image": "/assets/10_verb.webp"
     },
     {
       "name": "profession",
@@ -86,7 +86,7 @@
       "audioFolder": "profession",
       "card_back_txt": "Professions",
       "count": "90 words",
-      "image": "/assets/5-profession.webp"
+      "image": "/assets/11_profession.webp"
     },
     {
       "name": "animal",
@@ -94,7 +94,7 @@
       "audioFolder": "animal",
       "card_back_txt": "Animals",
       "count": "120 words",
-      "image": "/assets/6-animal.webp"
+      "image": "/assets/12_animal.webp"
     }
   ]
 }
