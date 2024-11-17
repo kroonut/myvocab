@@ -1,0 +1,9 @@
+[
+    { "word": "Monday", "translation": "วันจันทร์", "audioFile": "Monday.wav", "folder": "day" },
+    { "word": "Tuesday", "translation": "วันอังคาร", "audioFile": "Tuesday.wav", "folder": "day" },
+    { "word": "Wednesday", "translation": "วันพุธ", "audioFile": "Wednesday.wav", "folder": "day" },
+    { "word": "Thursday", "translation": "วันพฤหัสบดี", "audioFile": "Thursday.wav", "folder": "day" },
+    { "word": "Friday", "translation": "วันศุกร์", "audioFile": "Friday.wav", "folder": "day" },
+    { "word": "Saturday", "translation": "วันเสาร์", "audioFile": "Saturday.wav", "folder": "day" },
+    { "word": "Sunday", "translation": "วันอาทิตย์", "audioFile": "Sunday.wav", "folder": "day" }
+]
