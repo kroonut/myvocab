@@ -2,7 +2,7 @@
   "categories": [
     {
       "name": "grade1",
-      "fileName": "p1.json",
+      "fileName": "01_p1.json",
       "audioFolder": "p1",
       "card_back_txt": "Grade 1",
       "count": "155 words",
@@ -10,7 +10,7 @@
     },
     {
       "name": "grade2",
-      "fileName": "p2.json",
+      "fileName": "02_p2.json",
       "audioFolder": "p2",
       "card_back_txt": "Grade 2",
       "count": "159 words",
@@ -18,7 +18,7 @@
     },
     {
       "name": "grade3",
-      "fileName": "p3.json",
+      "fileName": "03_p3.json",
       "audioFolder": "p3",
       "card_back_txt": "Grade 3",
       "count": "154 words",
@@ -26,7 +26,7 @@
     },
     {
       "name": "grade4",
-      "fileName": "p4.json",
+      "fileName": "04_p4.json",
       "audioFolder": "p4",
       "card_back_txt": "Grade 4",
       "count": "255 words",
@@ -34,7 +34,7 @@
     },
     {
       "name": "grade5",
-      "fileName": "p5.json",
+      "fileName": "05_p5.json",
       "audioFolder": "p5",
       "card_back_txt": "Grade 5",
       "count": "254 words",
@@ -42,7 +42,7 @@
     },
     {
       "name": "grade6",
-      "fileName": "p6.json",
+      "fileName": "06_p6.json",
       "audioFolder": "p6",
       "card_back_txt": "Grade 6",
       "count": "250 words",
@@ -50,7 +50,7 @@
     },
     {
       "name": "day",
-      "fileName": "day.json",
+      "fileName": "07_day.json",
       "audioFolder": "day",
       "card_back_txt": "Days",
       "count": "7 words",
@@ -58,7 +58,7 @@
     },
     {
       "name": "month",
-      "fileName": "month.json",
+      "fileName": "08_month.json",
       "audioFolder": "month",
       "card_back_txt": "Months",
       "count": "12 words",
@@ -66,15 +66,31 @@
     },
     {
       "name": "color",
-      "fileName": "color.json",
+      "fileName": "09_color.json",
       "audioFolder": "color",
       "card_back_txt": "Colors",
-      "count": "12 words",
+      "count": "50 words",
       "image": "/assets/3-color.webp"
     },
     {
+      "name": "verb",
+      "fileName": "10_verb.json",
+      "audioFolder": "verb",
+      "card_back_txt": "Verbs",
+      "count": "50 words",
+      "image": "/assets/4-verb.webp"
+    },
+    {
+      "name": "profession",
+      "fileName": "11_profession.json",
+      "audioFolder": "profession",
+      "card_back_txt": "Professions",
+      "count": "90 words",
+      "image": "/assets/5-profession.webp"
+    },
+    {
       "name": "animal",
-      "fileName": "animal.json",
+      "fileName": "12_animal.json",
       "audioFolder": "animal",
       "card_back_txt": "Animals",
       "count": "120 words",
