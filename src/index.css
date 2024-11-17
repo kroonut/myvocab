@@ -11,8 +11,8 @@ body, html {
 /* Card Container */
 .home-page .home-card-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์ */
-  gap: 25px; /* ระยะห่างระหว่างการ์ด */
+  grid-template-columns: repeat(3, 1fr); /* 3 Columns */
+  gap: 25px;
   padding: 5px;
   width: 100%;
   max-width: 1600px;
@@ -24,7 +24,7 @@ body, html {
 .home-card {
   perspective: 1000px;
   width: 100%;
-  height: 350px; /* ปรับความสูงของการ์ด */
+  height: 350px; /* Adjust card height */
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -158,12 +158,12 @@ body, html {
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
   .home-page .home-card-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์สำหรับแท็บเล็ต */
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns for Tablet */
   }
 }
 
 @media (max-width: 768px) {
   .home-page .home-card-container {
-    grid-template-columns: 1fr; /* 1 คอลัมน์สำหรับมือถือ */
+    grid-template-columns: 1fr; /* 1 Column for Mobile */
   }
 }
