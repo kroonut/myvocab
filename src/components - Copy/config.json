@@ -1,0 +1,7 @@
+{
+  "categories": [
+    { "name": "grade1", "fileName": "p1.json", "audioFolder": "p1" },
+    { "name": "grade2", "fileName": "p2.json", "audioFolder": "p2" },
+    { "name": "grade3", "fileName": "p3.json", "audioFolder": "p3" }
+  ]
+}

@@ -1,0 +1,156 @@
+/* Reset and Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Full-width container */
+.container-fluid {
+  padding: 20px; /* เพิ่ม padding ให้ container */
+  font-family: 'Kanit', sans-serif;
+}
+
+/* Center the Vocabulary List title */
+.vocab-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Header Section */
+.header-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.header-section label,
+.header-section select,
+.header-section span {
+  margin: 0;
+}
+
+.header-section select {
+  width: 120px;
+}
+
+/* Main Vocabulary Card Styling */
+.vocab-card {
+  width: 100%; /* ให้การ์ดขยายเต็มความกว้างของ container-fluid */
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: transform 0.2s ease;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 2px solid #e0e0e0;
+}
+
+.vocab-card:hover {
+  transform: scale(1.02);
+}
+
+.vocab-card h1 {
+  font-size: 10vw;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+}
+
+.vocab-card h2 {
+  font-size: 2vw;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* Controls Section */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.button-controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.controls label {
+  margin-right: 5px;
+}
+
+.controls input[type="number"],
+.controls input[type="text"] {
+  width: 80px;
+  text-align: center;
+}
+
+.controls .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+}
+
+.controls .btn i {
+  margin: 0;
+}
+
+/* Button Styles */
+.btn-outline-primary {
+  border: 2px solid #007bff;
+  color: #007bff;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-success,
+.btn-danger {
+  color: #fff;
+}
+
+.btn-success:hover,
+.btn-danger:hover {
+  opacity: 0.9;
+}
+
+.btn:focus {
+  outline: 3px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .vocab-card h1 {
+    font-size: 8vw;
+  }
+
+  .vocab-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .input-controls,
+  .button-controls {
+    flex-wrap: wrap;
+  }
+}

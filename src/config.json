@@ -1,0 +1,10 @@
+{
+  "categories": [
+    { "name": "grade1", "fileName": "p1.json", "audioFolder": "p1" },
+    { "name": "grade2", "fileName": "p2.json", "audioFolder": "p2" },
+    { "name": "grade3", "fileName": "p3.json", "audioFolder": "p3" },
+    { "name": "grade4", "fileName": "p4.json", "audioFolder": "p4" },
+    { "name": "grade5", "fileName": "p5.json", "audioFolder": "p5" },
+    { "name": "grade6", "fileName": "p6.json", "audioFolder": "p6" }
+  ]
+}

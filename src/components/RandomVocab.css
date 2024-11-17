@@ -1,0 +1,122 @@
+/* Default layout for wide screens */
+.random-vocab-container {
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: space-between; /* Space between content and buttons */
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 60px;
+  padding: 10px 20px;
+  margin: 20px auto;
+  font-family: 'Kanit', sans-serif;
+}
+
+.random-vocab-content {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  gap: 10px; /* Add space between word and translation */
+  flex-grow: 1; /* Allow the content area to grow */
+}
+
+.vocab-word {
+  font-size: 2rem; /* Larger size for emphasis */
+  font-weight: bold;
+  color: blue;
+}
+
+.vocab-translation {
+  font-size: 2rem; /* Slightly smaller for translation */
+  color: #707070;
+}
+
+/* Button group stays aligned to the right */
+.button-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.play-button, .next-button, .speaker-button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.speaker-button {
+  background-color: blue;
+}
+
+.play-button {
+  background-color: orange;
+}
+
+.next-button {
+  background-color: green;
+}
+
+.play-button.active {
+  background-color: red;
+}
+
+.play-button:hover, .next-button:hover, .speaker-button:hover {
+  opacity: 0.8;
+}
+
+.speaker-button:disabled, 
+.next-button:disabled, 
+.play-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Layout for small screens only */
+@media (max-width: 768px) {
+  .random-vocab-container {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    height: auto;
+    padding: 15px;
+  }
+
+  .random-vocab-content {
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center; /* Center text */
+    flex-direction: column;
+  }
+
+  .vocab-word {
+    font-size: 2rem; /* Larger for visibility */
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #0044cc;
+  }
+
+  .vocab-translation {
+    font-size: 1.5rem;
+    color: #333333;
+  }
+
+  .button-group {
+    width: 100%;
+    justify-content: center;
+    gap: 5px; /* Reduced gap */
+  }
+
+  .play-button, .next-button, .speaker-button {
+    width: 35px; /* Smaller buttons */
+    height: 35px;
+    font-size: 1rem;
+  }
+}

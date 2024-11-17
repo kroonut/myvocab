@@ -1,0 +1,94 @@
+/* ปรับความสูงของ navbar ให้พอดีกับข้อความ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.8rem; /* เพิ่ม padding เพื่อให้สูงพอดีกับข้อความ */
+  background-color: #fff; /* พื้นหลังสีขาว */
+  color: #333; /* ข้อความสีเข้ม */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+}
+
+.navbar-brand {
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.navbar-logo {
+  width: 20px; /* ลดขนาดโลโก้ */
+  height: auto;
+  margin-right: 0.5rem; /* ระยะห่างระหว่างโลโก้กับชื่อแบรนด์ */
+}
+
+/* คงสีเข้มในทุกสถานะ */
+.navbar-brand:hover,
+.navbar-brand:focus,
+.navbar-brand:active {
+  color: #333;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 0.8rem;
+  margin: 0;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+.navbar-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #007bff; /* สีฟ้าเมื่อ hover */
+}
+
+/* ปุ่ม Hamburger */
+.hamburger {
+  display: none;
+  font-size: 1.3rem;
+  color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* แสดงผล Hamburger และซ่อนเมนูปกติในหน้าจอขนาดเล็ก */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* แสดงเมนูเมื่อเปิด */
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .navbar-link {
+    padding: 0.8rem 0;
+    width: 100%;
+    text-align: center;
+    color: #333;
+  }
+}
