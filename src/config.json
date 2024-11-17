@@ -65,6 +65,14 @@
       "image": "/assets/2-month.webp"
     },
     {
+      "name": "color",
+      "fileName": "color.json",
+      "audioFolder": "color",
+      "card_back_txt": "Colors",
+      "count": "12 words",
+      "image": "/assets/3-color.webp"
+    },
+    {
       "name": "animal",
       "fileName": "animal.json",
       "audioFolder": "animal",
