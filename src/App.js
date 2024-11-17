@@ -4,65 +4,53 @@ import Navbar from './components/Navbar';
 import Vocabulary from './components/Vocabulary';
 import Showcat from './components/Showcat';
 import Allvocab from './components/Allvocab';
-import Allvocabcat from './components/Allvocabcat'; // Import Allvocabcat component
+import Allvocabcat from './components/Allvocabcat';
 import Search from './components/Search';
 import RandomVocab from './components/RandomVocab';
+import config from './config.json'; // Import config.json
 import './index.css';
 
 function App() {
-  const cardData = [
-    { id: 1, category: "grade1", card_back_txt: "Grade 1", count: "155 words", image: "/assets/p1.webp" },
-    { id: 2, category: "grade2", card_back_txt: "Grade 2", count: "159 words", image: "/assets/p2.webp" },
-    { id: 3, category: "grade3", card_back_txt: "Grade 3", count: "154 words", image: "/assets/p3.webp" },
-    { id: 4, category: "grade4", card_back_txt: "Grade 4", count: "255 words", image: "/assets/p4.webp" },
-    { id: 5, category: "grade5", card_back_txt: "Grade 5", count: "254 words", image: "/assets/p5.webp" },
-    { id: 6, category: "grade6", card_back_txt: "Grade 6", count: "250 words", image: "/assets/p6.webp" },
-    { id: 6, category: "day", card_back_txt: "Days", count: "7 words", image: "/assets/1-day.webp" },
-    { id: 6, category: "month", card_back_txt: "Months", count: "12 words", image: "/assets/2-month.webp" },
-    { id: 6, category: "animal", card_back_txt: "Animals", count: "120 words", image: "/assets/6-animal.webp" },
-  ];
-
   return (
     <div id="root">
       <Navbar />
       <div className="container-fluid">
         <Routes>
-          {/* หน้าแรก (Homepage) */}
+          {/* Homepage */}
           <Route
             path="/"
             element={
               <div className="home-page text-center">
                 <RandomVocab />
                 <div className="home-card-container">
-                  {cardData.map((card) => (
-                    <div className="home-card" key={card.id}>
+                  {config.categories.map((category) => (
+                    <div className="home-card" key={category.name}>
                       <div className="home-card-inner">
-                        {/* Front side */}
+                        {/* Front Side */}
                         <div className="home-card-front">
-                          <span className="badge">{card.card_back_txt}</span>
-                          <img src={card.image} alt={card.category} />
+                          <span className="badge">{category.card_back_txt}</span>
+                          <img src={category.image} alt={category.name} />
                         </div>
-                        {/* Back side */}
+                        {/* Back Side */}
                         <div className="home-card-back">
-                          <div className="level-text">{card.card_back_txt}</div>
-                          <div className="count-text">{card.count}</div>
+                          <div className="level-text">{category.card_back_txt}</div>
+                          <div className="count-text">{category.count}</div>
                         </div>
                       </div>
                       {/* Footer */}
                       <div className="home-card-footer">
                         <Link
-                          to={`/showcat/${card.category}`} // Updated to use /showcat/:category style
+                          to={`/showcat/${category.name}`} // Dynamic link to Showcat
                           className="home-card-button read-button"
                         >
                           <i className="fas fa-book-open"></i> ฝึกอ่าน
                         </Link>
                         <Link
-                          to={`/allvocabcat/${card.category}`} // Redirect to Allvocabcat with the selected category
+                          to={`/allvocabcat/${category.name}`} // Dynamic link to Allvocabcat
                           className="home-card-button review-button"
                         >
                           <i className="fas fa-list-alt"></i> ทั้งหมด
                         </Link>
-
                       </div>
                     </div>
                   ))}
@@ -70,13 +58,13 @@ function App() {
               </div>
             }
           />
-          {/* Other Routes */}
+          {/* Routes for Other Pages */}
           <Route path="/showcat/:categoryName" element={<Showcat />} />
           <Route path="/allvocab" element={<Allvocab />} />
-          <Route path="/allvocabcat/:categoryName" element={<Allvocabcat />} /> {/* Add dynamic route for Allvocabcat */}
+          <Route path="/allvocabcat/:categoryName" element={<Allvocabcat />} />
           <Route path="/search" element={<Search />} />
           <Route path="/randomVocab" element={<RandomVocab />} />
-          <Route path="/Vocabulary" element={<Vocabulary />} />
+          <Route path="/vocabulary" element={<Vocabulary />} />
         </Routes>
       </div>
     </div>

@@ -1,13 +1,76 @@
 {
   "categories": [
-    { "name": "grade1", "fileName": "p1.json", "audioFolder": "p1" },
-    { "name": "grade2", "fileName": "p2.json", "audioFolder": "p2" },
-    { "name": "grade3", "fileName": "p3.json", "audioFolder": "p3" },
-    { "name": "grade4", "fileName": "p4.json", "audioFolder": "p4" },
-    { "name": "grade5", "fileName": "p5.json", "audioFolder": "p5" },
-    { "name": "grade6", "fileName": "p6.json", "audioFolder": "p6" },
-    { "name": "day", "fileName": "day.json", "audioFolder": "day" },
-    { "name": "month", "fileName": "month.json", "audioFolder": "month" },
-    { "name": "animal", "fileName": "animal.json", "audioFolder": "animal" }
+    {
+      "name": "grade1",
+      "fileName": "p1.json",
+      "audioFolder": "p1",
+      "card_back_txt": "Grade 1",
+      "count": "155 words",
+      "image": "/assets/p1.webp"
+    },
+    {
+      "name": "grade2",
+      "fileName": "p2.json",
+      "audioFolder": "p2",
+      "card_back_txt": "Grade 2",
+      "count": "159 words",
+      "image": "/assets/p2.webp"
+    },
+    {
+      "name": "grade3",
+      "fileName": "p3.json",
+      "audioFolder": "p3",
+      "card_back_txt": "Grade 3",
+      "count": "154 words",
+      "image": "/assets/p3.webp"
+    },
+    {
+      "name": "grade4",
+      "fileName": "p4.json",
+      "audioFolder": "p4",
+      "card_back_txt": "Grade 4",
+      "count": "255 words",
+      "image": "/assets/p4.webp"
+    },
+    {
+      "name": "grade5",
+      "fileName": "p5.json",
+      "audioFolder": "p5",
+      "card_back_txt": "Grade 5",
+      "count": "254 words",
+      "image": "/assets/p5.webp"
+    },
+    {
+      "name": "grade6",
+      "fileName": "p6.json",
+      "audioFolder": "p6",
+      "card_back_txt": "Grade 6",
+      "count": "250 words",
+      "image": "/assets/p6.webp"
+    },
+    {
+      "name": "day",
+      "fileName": "day.json",
+      "audioFolder": "day",
+      "card_back_txt": "Days",
+      "count": "7 words",
+      "image": "/assets/1-day.webp"
+    },
+    {
+      "name": "month",
+      "fileName": "month.json",
+      "audioFolder": "month",
+      "card_back_txt": "Months",
+      "count": "12 words",
+      "image": "/assets/2-month.webp"
+    },
+    {
+      "name": "animal",
+      "fileName": "animal.json",
+      "audioFolder": "animal",
+      "card_back_txt": "Animals",
+      "count": "120 words",
+      "image": "/assets/6-animal.webp"
+    }
   ]
 }
