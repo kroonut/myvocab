@@ -7,7 +7,7 @@
     { "name": "grade5", "fileName": "p5.json", "audioFolder": "p5" },
     { "name": "grade6", "fileName": "p6.json", "audioFolder": "p6" },
     { "name": "day", "fileName": "day.json", "audioFolder": "day" },
-
+    { "name": "month", "fileName": "month.json", "audioFolder": "month" },
     { "name": "animal", "fileName": "animal.json", "audioFolder": "animal" }
   ]
 }

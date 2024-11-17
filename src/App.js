@@ -18,6 +18,7 @@ function App() {
     { id: 5, category: "grade5", card_back_txt: "Grade 5", count: "254 words", image: "/assets/p5.webp" },
     { id: 6, category: "grade6", card_back_txt: "Grade 6", count: "250 words", image: "/assets/p6.webp" },
     { id: 6, category: "day", card_back_txt: "Days", count: "250 words", image: "/assets/1-day.webp" },
+    { id: 6, category: "month", card_back_txt: "Months", count: "250 words", image: "/assets/2-month.webp" },
     { id: 6, category: "animal", card_back_txt: "Animals", count: "120 words", image: "/assets/6-animal.webp" },
   ];
 
