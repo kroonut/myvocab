@@ -1,3 +1,4 @@
+// App.js
 import React from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 import Navbar from './components/Navbar';
