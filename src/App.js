@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-//app.js
-=======
-// App.js
->>>>>>> 251da239dea30f9068b7e83359f3ed6f0d7f8d28
 import React from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 import Navbar from './components/Navbar';
