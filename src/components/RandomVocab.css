@@ -22,6 +22,7 @@
 }
 
 .vocab-word {
+  font-family: 'Poppins', 'Kanit';
   font-size: 2rem; /* Larger size for emphasis */
   font-weight: bold;
   color: blue;

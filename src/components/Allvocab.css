@@ -83,6 +83,7 @@
 }
 
 .allvocabcss .vocab-card-title {
+  font-family: 'Poppins', 'Kanit';
   font-size: 2rem;
   font-weight: bold;
   color: #000;
