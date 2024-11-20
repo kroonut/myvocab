@@ -37,13 +37,13 @@ const Navbar = () => {
               <Link to="/" className="nav-link" onClick={toggleMenu}>Home</Link>
             </li>
             <li className="nav-item">
-              <Link to="/vocabulary" className="nav-link" onClick={toggleMenu}>Vocabulary</Link>
+              <Link to="/vocabulary" className="nav-link" onClick={toggleMenu}>คำศัพท์</Link>
             </li>
             <li className="nav-item">
-              <Link to="/allvocab" className="nav-link" onClick={toggleMenu}>All Vocab</Link>
+              <Link to="/allvocab" className="nav-link" onClick={toggleMenu}>ทั้งหมด</Link>
             </li>
             <li className="nav-item">
-              <Link to="/search" className="nav-link" onClick={toggleMenu}>Search</Link>
+              <Link to="/search" className="nav-link" onClick={toggleMenu}>ค้นหา</Link>
             </li>
             <li className="nav-item">
               <Link to="/randomvocab" className="nav-link" onClick={toggleMenu}>Randomvocab</Link>
