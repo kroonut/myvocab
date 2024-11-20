@@ -56,6 +56,11 @@ const Navbar = () => {
               <i className="fas fa-random"></i> Randomvocab
             </Link>
           </li>
+          <li className="nav-item">
+            <Link to="/CategoriesList" className="nav-link" onClick={toggleMenu}>
+              <i className="fas fa-random"></i> CategoriesList
+            </Link>
+          </li>         
         </ul>
       </div>
     </nav>

@@ -1,0 +1,29 @@
+.categories-list {
+    padding: 20px;
+  }
+  
+  .categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .category-link {
+    text-decoration: none;
+  }
+  
+  .category-button {
+    font-family: 'Poppins', 'Kanit';
+    font-weight: bold;
+    font-size: 10px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .category-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
