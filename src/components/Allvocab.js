@@ -36,10 +36,14 @@ function Allvocab() {
     <div className="container-fluid allvocabcss">
       <h1 className="page-title text-center">All Vocabulary</h1>
 
-      {/* Category selection */}
-      <div className="d-flex justify-content-center mb-4">
+      <div className="d-flex justify-content-center align-items-center mb-4">
+  {/* Label */}
+  <label htmlFor="vocabDropdown" className="form-label me-2 mb-0">
+    เลือกหมวดหมู่:
+  </label>
         <select
-          className="form-select w-25"
+          className="form-select"
+          style={{ width: '150px' }} // Custom width for the dropdown
           value={selectedCategory.name}
           onChange={handleCategoryChange}
         >

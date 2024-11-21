@@ -162,6 +162,7 @@ const Vocabulary = () => {
         <select
           id="vocabDropdown"
           className="form-select d-inline-block"
+          style={{ width: '150px' }} // Custom width for the dropdown
           onChange={handleCategoryChange}
           value={selectedCategory.name}
         >
