@@ -9,6 +9,7 @@ import Search from './components/Search';
 import RandomVocab from './components/RandomVocab';
 import CategoriesList from './components/CategoriesList';
 import VocabCardCat from './components/VocabCardCat'; // Import VocabCardCat
+import VocabQuizGame from './components/VocabQuizGame'
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/randomVocab" element={<RandomVocab />} />
           <Route path="/vocabulary" element={<Vocabulary />} />
           <Route path="/CategoriesList" element={<CategoriesList />} />
+          <Route path="/VocabQuizGame" element={<VocabQuizGame />} />
         </Routes>
       </div>
     </div>

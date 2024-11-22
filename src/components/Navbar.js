@@ -60,7 +60,12 @@ const Navbar = () => {
             <Link to="/CategoriesList" className="nav-link" onClick={toggleMenu}>
               <i className="fas fa-random"></i> CategoriesList
             </Link>
-          </li>         
+          </li>
+          <li className="nav-item">
+            <Link to="/VocabQuizGame" className="nav-link" onClick={toggleMenu}>
+              <i className="fas fa-random"></i> VocabQuizGame
+            </Link>
+          </li>          
         </ul>
       </div>
     </nav>

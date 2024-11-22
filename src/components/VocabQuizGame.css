@@ -1,0 +1,210 @@
+/* VocabQuizGame.css */
+
+/* General Container Styling */
+.container {
+    font-family: 'Kanit', sans-serif;
+  }
+  
+  /* Dropdowns Section */
+  .dropdowns-container {
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .form-select {
+    width: 150px;
+    display: inline-block;
+  }
+  
+  /* Quiz Card Styling */
+  .card {
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .player-name {
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .question-number {
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .player-points {
+    text-align: right;
+    font-weight: bold;
+  }
+  
+  .card-body {
+    padding: 30px;
+  }
+  
+  .card-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+  
+  /* Options */
+  .quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .option-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .quiz-option {
+    flex: 1;
+    text-align: left;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    padding-left: 15px;
+  }
+  
+  /* Audio Icon */
+  .audio-icon-right {
+    margin-left: 10px;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 1.8rem;
+  }
+  
+  .audio-icon-right:hover {
+    color: #0056b3;
+  }
+  
+  /* Centering Text and Cursor in Player Name Input */
+  .name-input {
+    text-align: center; /* Centers the text and cursor */
+    padding: 0.5rem;    /* Adjusts padding for better vertical alignment */
+    font-size: 1rem;    /* Ensures consistent font size */
+    border-radius: 8px; /* Matches the styling of other buttons */
+  }
+  
+  /* Responsive Design for Input Field */
+  .mb-3.text-center input.name-input {
+    max-width: 300px; /* Adjust as needed */
+    width: 100%;
+    margin: 0 auto;   /* Centers the input horizontally */
+  }
+  
+  /* Hover and Focus States for Input Field */
+  .name-input:focus {
+    border: 2px solid #0056b3; /* Changes border color on focus */
+    outline: none;             /* Removes the default outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Adds a subtle shadow */
+  }
+  
+  /* Placeholder Text Styling */
+  .name-input::placeholder {
+    text-align: center;
+    color: #6c757d; /* Bootstrap's default placeholder color */
+    opacity: 1;     /* Ensures full visibility */
+  }
+  
+  /* Additional Styling for Buttons */
+  .btn-primary {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+  
+  .btn-success {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+  
+  /* Ensuring the Welcome Screen is Properly Styled */
+  h1 {
+    font-size: 3rem;
+    color: #333;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .mb-3 {
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Ensuring the Quiz Question is Styled Appropriately */
+  .question {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  /* Responsive Design Enhancements */
+  @media (max-width: 768px) {
+    .card {
+      padding: 10px;
+    }
+  
+    .card-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .player-name,
+    .question-number,
+    .player-points {
+      text-align: left;
+    }
+  
+    .quiz-option {
+      font-size: 1.2rem;
+      height: 50px;
+      padding-left: 10px;
+    }
+  
+    .audio-icon-right {
+      font-size: 1.5rem;
+    }
+  
+    .card-title {
+      font-size: 2rem;
+    }
+  
+    .form-label {
+      font-size: 1rem;
+    }
+  
+    .form-select {
+      width: 120px;
+    }
+  
+    .btn-primary,
+    .btn-success {
+      font-size: 1rem;
+      padding: 8px 16px;
+    }
+  }
+  
