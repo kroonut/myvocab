@@ -63,7 +63,7 @@ const Allvocabcat = () => {
       ) : (
         <>
           {/* Category selection */}
-          <div className="d-flex justify-content-center mb-4">
+          <div className="d-flex justify-content-center align-items-center mb-4">
             <select
               className="form-select w-25"
               value={selectedCategory?.name || ""}
@@ -75,6 +75,13 @@ const Allvocabcat = () => {
                 </option>
               ))}
             </select>
+            {/* Display word count for the selected category */}
+            <span
+              className="ms-2"
+              style={{ color: "black" }}
+            >
+              {vocabList.length} คำ
+            </span>
           </div>
 
           {/* Vocabulary Cards */}

@@ -3,19 +3,38 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Full-width container */
 .container-fluid {
-  padding: 20px; /* Padding for the container */
+  padding: 20px;
   font-family: 'Kanit', sans-serif;
 }
 
-/* Vocabulary Card Container - Scoped to Allvocab */
+/* Header Section */
+.allvocabcss .header-section {
+  display: flex;
+  justify-content: center; /* Center elements horizontally */
+  align-items: center; /* Center elements vertically */
+  gap: 20px; /* Equal spacing between elements */
+  margin-bottom: 20px; /* Space between header and content below */
+}
+
+.allvocabcss .header-section select {
+  margin-right: 10px; /* Space between dropdown and count */
+}
+
+.allvocabcss .header-section span {
+  font-size: 1rem;
+}
+
+/* Vocabulary Card Container */
 .allvocabcss .vocab-card-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 25px; /* Space between cards */
+  grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
+  gap: 25px;
   padding: 5px;
   width: 100%;
   max-width: 1600px;
@@ -23,7 +42,7 @@
   box-sizing: border-box;
 }
 
-/* Individual Vocabulary Card - Scoped to Allvocab */
+/* Individual Vocabulary Card */
 .allvocabcss .vocab-card {
   background-color: #fff;
   border-radius: 12px;
@@ -33,33 +52,35 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   padding: 1.5rem;
   position: relative;
   border: 1px solid #ddd;
 }
 
 .allvocabcss .vocab-card:hover {
-  transform: scale(1.02);
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Deep shadow */
 }
 
 /* Category Badge - Top Left Corner */
 .allvocabcss .top-left-badge {
-  background-color: #f8f9fa; /* Light gray background */
+  background-color: #f1f1f1;
   font-size: 0.75rem;
   font-weight: bold;
   padding: 0.3rem 0.5rem;
-  border-radius: 8px;
-  color: #707070;
+  border-radius: 12px;
+  color: #333;
   position: absolute;
   top: 10px;
-  left: 10px; /* Positioned at the top left corner */
+  left: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 /* Index Badge - Top Right Corner */
 .allvocabcss .top-right-badge {
-  background-color: #f8f9fa; /* Light gray background */
-  color: #707070;
+  background-color: #f1f1f1;
+  color: #333;
   font-size: 0.75rem;
   font-weight: bold;
   padding: 0.3rem 0.5rem;
@@ -72,6 +93,7 @@
   position: absolute;
   top: 10px;
   right: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 /* Card Content */
@@ -87,13 +109,13 @@
   font-size: 2rem;
   font-weight: bold;
   color: #000;
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
 .allvocabcss .vocab-card-text {
   font-size: 1.2rem;
   color: #555;
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
 .allvocabcss .vocab-card-button {
@@ -102,26 +124,44 @@
   border: none;
   color: #fff;
   font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Responsive Design - Scoped to Allvocab */
+.allvocabcss .vocab-card-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-3px); /* Lift effect */
+  cursor: pointer;
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
   .allvocabcss .vocab-card-container {
     grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+
+  .allvocabcss .header-section {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align dropdown and count to the left */
+  }
+
+  .allvocabcss .header-section select {
+    margin-bottom: 10px; /* Space below dropdown on smaller screens */
+    margin-right: 0; /* Remove margin-right for stacked layout */
   }
 }
 
 @media (max-width: 768px) {
   .allvocabcss .vocab-card-container {
-    grid-template-columns: 1fr; /* 1 column on smaller screens */
+    grid-template-columns: 1fr; /* 1 column on small screens */
   }
-  
+
   /* Adjust font size for small screens */
   .allvocabcss .vocab-card-title {
     font-size: 1.5rem; /* Smaller font size for titles */
   }
+
   .allvocabcss .vocab-card-text {
     font-size: 1rem; /* Smaller font size for text */
   }
