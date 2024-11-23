@@ -155,22 +155,24 @@ const Vocabulary = () => {
 
   return (
     <div className="container-fluid">
-      <h1 className="vocab-title">Vocabulary List</h1>
+      <h1 className="vocab-title">หมวดหมู่: {selectedCategory.displayName}</h1>
 
       <div className="header-section">
         <label htmlFor="vocabDropdown">เลือกหมวดหมู่:</label>
         <select
           id="vocabDropdown"
           className="form-select d-inline-block"
+          style={{ width: '150px' }}
           onChange={handleCategoryChange}
           value={selectedCategory.name}
         >
           {config.categories.map((category) => (
             <option key={category.name} value={category.name}>
-              {category.name}
+              {category.displayName} {/* แสดงชื่อหมวดหมู่ภาษาไทย */}
             </option>
           ))}
         </select>
+
         <span>No. {currentWordIndex + 1}/{vocabList.length}</span>
       </div>
 
@@ -200,7 +202,7 @@ const Vocabulary = () => {
           <div>
             <label>ช่วงคำ:</label>
             <input
-              type="text" 
+              type="text"
               value={range}
               onChange={handleRangeChange}
               className="form-control d-inline-block"

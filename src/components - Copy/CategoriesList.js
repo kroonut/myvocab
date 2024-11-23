@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import config from "../config.json";
-import "../styles/CategoriesList.css"; // Import CSS for styling
+import "./CategoriesList.css"; // Import CSS for styling
 
 const CategoriesList = () => {
   const [wordCounts, setWordCounts] = useState({});

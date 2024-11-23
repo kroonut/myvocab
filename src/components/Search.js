@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import config from '../config.json';
-import './Search.css';
+import '../styles/Search.css';
 
 const Search = () => {
   const [allVocabList, setAllVocabList] = useState([]); // All vocab data across categories

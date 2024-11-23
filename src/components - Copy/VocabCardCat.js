@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import config from '../config.json'; // Import configuration
-import '../styles/VocabCardCat.css'; // Import separate CSS for styling
+import './VocabCardCat.css'; // Import separate CSS for styling
 
 const VocabCardCat = () => {
   const [wordCounts, setWordCounts] = useState({});

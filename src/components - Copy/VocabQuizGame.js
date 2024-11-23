@@ -1,7 +1,7 @@
 // VocabQuizGame.jsx
 import React, { useState, useEffect } from 'react';
 import config from '../config.json';
-import '../styles/VocabQuizGame.css';
+import './VocabQuizGame.css';
 
 const VocabQuizGame = () => {
   const [selectedCategory, setSelectedCategory] = useState(config.categories[0]);

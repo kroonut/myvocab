@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import p1 from '../vocab-data/p1';
 import p2 from '../vocab-data/p2';
-import './Vocabulary.css';
+import '../styles/Vocabulary.css';
 
 function Vocabulary() {
   const [currentVocab, setCurrentVocab] = useState(0);

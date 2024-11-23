@@ -1,7 +1,100 @@
 {
   "categories": [
-    { "name": "grade1", "fileName": "p1.json", "audioFolder": "p1" },
-    { "name": "grade2", "fileName": "p2.json", "audioFolder": "p2" },
-    { "name": "grade3", "fileName": "p3.json", "audioFolder": "p3" }
+    {
+      "name": "grade1",
+      "fileName": "01_p1.json",
+      "audioFolder": "p1",
+      "card_back_txt": "Grade 1",
+      "image": "/assets/01_p1.webp",
+      "displayName": "ชั้น ป.1"
+    },
+    {
+      "name": "grade2",
+      "fileName": "02_p2.json",
+      "audioFolder": "p2",
+      "card_back_txt": "Grade 2",
+      "image": "/assets/02_p2.webp",
+      "displayName": "ชั้น ป.2"
+    },
+    {
+      "name": "grade3",
+      "fileName": "03_p3.json",
+      "audioFolder": "p3",
+      "card_back_txt": "Grade 3",
+      "image": "/assets/03_p3.webp",
+      "displayName": "ชั้น ป.3"
+    },
+    {
+      "name": "grade4",
+      "fileName": "04_p4.json",
+      "audioFolder": "p4",
+      "card_back_txt": "Grade 4",
+      "image": "/assets/04_p4.webp",
+      "displayName": "ชั้น ป.4"
+    },
+    {
+      "name": "grade5",
+      "fileName": "05_p5.json",
+      "audioFolder": "p5",
+      "card_back_txt": "Grade 5",
+      "image": "/assets/05_p5.webp",
+      "displayName": "ชั้น ป.5"
+    },
+    {
+      "name": "grade6",
+      "fileName": "06_p6.json",
+      "audioFolder": "p6",
+      "card_back_txt": "Grade 6",
+      "image": "/assets/06_p6.webp",
+      "displayName": "ชั้น ป.6"
+    },
+    {
+      "name": "day",
+      "fileName": "07_day.json",
+      "audioFolder": "day",
+      "card_back_txt": "Days",
+      "image": "/assets/07_day.webp",
+      "displayName": "วัน"
+    },
+    {
+      "name": "month",
+      "fileName": "08_month.json",
+      "audioFolder": "month",
+      "card_back_txt": "Months",
+      "image": "/assets/08_month.webp",
+      "displayName": "เดือน"
+    },
+    {
+      "name": "color",
+      "fileName": "09_color.json",
+      "audioFolder": "color",
+      "card_back_txt": "Colors",
+      "image": "/assets/09_color.webp",
+      "displayName": "สี"
+    },
+    {
+      "name": "verb",
+      "fileName": "10_verb.json",
+      "audioFolder": "verb",
+      "card_back_txt": "Verbs",
+      "image": "/assets/10_verb.webp",
+      "displayName": "คำกริยา"
+    },
+    {
+      "name": "profession",
+      "fileName": "11_profession.json",
+      "audioFolder": "profession",
+      "card_back_txt": "Professions",
+      "image": "/assets/11_profession.webp",
+      "displayName": "อาชีพ"
+    },
+    {
+      "name": "animal",
+      "fileName": "12_animal.json",
+      "audioFolder": "animal",
+      "card_back_txt": "Animals",
+      "image": "/assets/12_animal.webp",
+      "displayName": "สัตว์"
+    }
   ]
 }

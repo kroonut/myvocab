@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import config from '../config.json';
-import './Allvocab.css';
+import '../styles/Allvocab.css';
 
 const Allvocabcat = () => {
   const { categoryName } = useParams(); // Get categoryName from the URL

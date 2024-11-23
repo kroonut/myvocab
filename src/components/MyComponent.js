@@ -1,5 +1,5 @@
 import React from 'react';
-import './MyComponent.css';
+import '../styles/MyComponent.css';
 
 const MyComponent = () => {
   return (

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import config from '../config.json';
-import './RandomVocab.css';
+import '../styles/RandomVocab.css';
 
 function RandomVocab() {
   const [randomVocabWord, setRandomVocabWord] = useState(null);

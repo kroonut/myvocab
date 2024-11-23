@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import config from '../config.json';
-import './Allvocab.css';
+import '../styles/Allvocab.css';
 
 function Allvocab() {
   const [vocabList, setVocabList] = useState([]); // Vocabulary data for the current category

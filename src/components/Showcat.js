@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import config from '../config.json';
-import './Vocabulary.css';
+import '../styles/Vocabulary.css';
 
 const Showcat = () => {
   const { categoryName } = useParams();

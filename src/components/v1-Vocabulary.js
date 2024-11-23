@@ -1,7 +1,7 @@
 // src/components/Vocabulary.js
 import React, { useState, useEffect } from 'react';
 import config from '../config.json';
-import './Vocabulary.css';
+import '../styles/Vocabulary.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
