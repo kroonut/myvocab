@@ -20,7 +20,7 @@ const Allvocabcat = () => {
       setErrorMessage("");
     } catch (error) {
       console.error("Error loading vocabulary data:", error);
-      setErrorMessage("Unable to load vocabulary data.");
+      setErrorMessage("ไม่สามารถโหลดคำศัพท์ได้");
     }
   };
 
@@ -34,7 +34,7 @@ const Allvocabcat = () => {
       setSelectedCategory(category);
       loadVocabData(category.fileName);
     } else {
-      setErrorMessage("Category not found.");
+      setErrorMessage("ไม่พบหมวดหมู่");
     }
   }, [categoryName]);
 
@@ -55,7 +55,7 @@ const Allvocabcat = () => {
   return (
     <div className="container-fluid allvocabcss">
       <h1 className="page-title text-center">
-        Vocabulary List - {selectedCategory ? selectedCategory.name : "Category not found"}
+        รายการคำศัพท์ - {selectedCategory ? selectedCategory.displayName : "หมวดหมู่ไม่พบ"}
       </h1>
 
       {errorMessage ? (
@@ -71,7 +71,7 @@ const Allvocabcat = () => {
             >
               {config.categories.map((category) => (
                 <option key={category.name} value={category.name}>
-                  {category.name}
+                  {category.displayName} {/* Display name in Thai */}
                 </option>
               ))}
             </select>
@@ -81,7 +81,7 @@ const Allvocabcat = () => {
           <div className="vocab-card-container">
             {vocabList.map((item, index) => (
               <div className="vocab-card" key={index}>
-                <span className="top-left-badge">{selectedCategory.name}</span>
+                <span className="top-left-badge">{selectedCategory.displayName}</span>
                 <span className="top-right-badge">{index + 1}</span>
                 <div className="vocab-card-body">
                   <h2 className="vocab-card-title">{item.word}</h2>

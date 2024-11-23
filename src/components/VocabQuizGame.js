@@ -1,19 +1,19 @@
-// VocabQuizGame.jsx
 import React, { useState, useEffect } from 'react';
 import config from '../config.json';
 import './VocabQuizGame.css';
 
 const VocabQuizGame = () => {
   const [selectedCategory, setSelectedCategory] = useState(config.categories[0]);
-  const [numQuestions, setNumQuestions] = useState(10); // Default number of questions
+  const [numQuestions, setNumQuestions] = useState(10);
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [isQuizFinished, setIsQuizFinished] = useState(false);
   const [vocabList, setVocabList] = useState([]);
-  const [playerName, setPlayerName] = useState(''); // To store the player's name
-  const [isGameStarted, setIsGameStarted] = useState(false); // To check if the game has started
+  const [playerName, setPlayerName] = useState('');
+  const [isGameStarted, setIsGameStarted] = useState(false);
 
+  // Load vocabulary data
   const loadVocabData = async (fileName) => {
     try {
       const response = await fetch(`${process.env.PUBLIC_URL}/vocab-data/${fileName}`);
@@ -25,11 +25,12 @@ const VocabQuizGame = () => {
     }
   };
 
+  // Generate quiz questions
   const generateQuizQuestions = (vocabList, num) => {
     const shuffled = [...vocabList].sort(() => 0.5 - Math.random());
-    const selected = shuffled.slice(0, num);
+    const selected = shuffled.slice(0, Math.min(num, vocabList.length));
 
-    const questions = selected.map((vocab, index) => {
+    const questions = selected.map((vocab) => {
       const wrongAnswers = vocabList
         .filter((item) => item.word !== vocab.word)
         .sort(() => 0.5 - Math.random())
@@ -37,12 +38,12 @@ const VocabQuizGame = () => {
 
       const options = [...wrongAnswers, vocab].sort(() => 0.5 - Math.random());
       return {
-        question: index < 5 ? vocab.translation : vocab.word,
-        correctAnswer: index < 5 ? vocab.word : vocab.translation,
+        question: Math.random() > 0.5 ? vocab.translation : vocab.word,
+        correctAnswer: Math.random() > 0.5 ? vocab.word : vocab.translation,
         audioFile: vocab.audioFile,
         folder: vocab.folder,
         options: options.map((item) =>
-          index < 5 ? item.word : item.translation
+          Math.random() > 0.5 ? item.word : item.translation
         ),
       };
     });
@@ -53,6 +54,7 @@ const VocabQuizGame = () => {
     setIsQuizFinished(false);
   };
 
+  // Handle category change
   const handleCategoryChange = (e) => {
     const category = config.categories.find((cat) => cat.name === e.target.value);
     if (category) {
@@ -61,12 +63,14 @@ const VocabQuizGame = () => {
     }
   };
 
+  // Handle number of questions change
   const handleNumQuestionsChange = (e) => {
     const num = parseInt(e.target.value, 10);
     setNumQuestions(num);
-    generateQuizQuestions(vocabList, num); // Regenerate questions based on new count
+    generateQuizQuestions(vocabList, num);
   };
 
+  // Play audio
   const playAudio = (audioFile, folder) => {
     const audioPath = `${process.env.PUBLIC_URL}/wav/${folder}/${audioFile}`;
     const audio = new Audio(audioPath);
@@ -75,6 +79,7 @@ const VocabQuizGame = () => {
     });
   };
 
+  // Handle option click
   const handleOptionClick = (selectedOption) => {
     if (quizQuestions[currentQuestionIndex].correctAnswer === selectedOption) {
       setScore((prevScore) => prevScore + 1);
@@ -87,15 +92,17 @@ const VocabQuizGame = () => {
     }
   };
 
+  // Start the game
   const startGame = () => {
     if (playerName.trim() !== '') {
       setIsGameStarted(true);
       loadVocabData(selectedCategory.fileName);
     } else {
-      alert('กรุณากรอกชื่อก่อนเริ่มเกม'); // "Please enter your name before starting the game"
+      alert('กรุณากรอกชื่อก่อนเริ่มเกม');
     }
   };
 
+  // Initial load of vocabulary data
   useEffect(() => {
     if (isGameStarted) {
       loadVocabData(selectedCategory.fileName);
@@ -144,7 +151,7 @@ const VocabQuizGame = () => {
           >
             {config.categories.map((category) => (
               <option key={category.name} value={category.name}>
-                {category.card_back_txt}
+                {category.displayName}
               </option>
             ))}
           </select>
@@ -187,32 +194,13 @@ const VocabQuizGame = () => {
                 </h1>
                 <div className="quiz-options">
                   {quizQuestions[currentQuestionIndex]?.options.map((option, index) => (
-                    <div key={index} className="option-row">
-                      <button
-                        className="btn btn-primary quiz-option"
-                        onClick={() => handleOptionClick(option)}
-                      >
-                        <h2>
-                          <span className="option-label">
-                            {String.fromCharCode(97 + index)}. {/* a, b, c, d */}
-                          </span>
-                          {option}
-                        </h2>
-                      </button>
-                      <i
-                        className="fas fa-volume-up audio-icon-right"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          const vocab = vocabList.find((item) =>
-                            item.translation === option || item.word === option
-                          );
-                          if (vocab) {
-                            playAudio(vocab.audioFile, vocab.folder);
-                          }
-                        }}
-                        title="Play Audio"
-                      ></i>
-                    </div>
+                    <button
+                      key={index}
+                      className="btn btn-primary quiz-option"
+                      onClick={() => handleOptionClick(option)}
+                    >
+                      {String.fromCharCode(97 + index)}. {option}
+                    </button>
                   ))}
                 </div>
               </div>

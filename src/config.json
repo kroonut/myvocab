@@ -6,7 +6,8 @@
       "audioFolder": "p1",
       "card_back_txt": "Grade 1",
       "count": "155 words",
-      "image": "/assets/01_p1.webp"
+      "image": "/assets/01_p1.webp",
+      "displayName": "ชั้น ป.1"
     },
     {
       "name": "grade2",
@@ -14,7 +15,8 @@
       "audioFolder": "p2",
       "card_back_txt": "Grade 2",
       "count": "159 words",
-      "image": "/assets/02_p2.webp"
+      "image": "/assets/02_p2.webp",
+      "displayName": "ชั้น ป.2"
     },
     {
       "name": "grade3",
@@ -22,7 +24,8 @@
       "audioFolder": "p3",
       "card_back_txt": "Grade 3",
       "count": "154 words",
-      "image": "/assets/03_p3.webp"
+      "image": "/assets/03_p3.webp",
+      "displayName": "ชั้น ป.3"
     },
     {
       "name": "grade4",
@@ -30,7 +33,8 @@
       "audioFolder": "p4",
       "card_back_txt": "Grade 4",
       "count": "255 words",
-      "image": "/assets/04_p4.webp"
+      "image": "/assets/04_p4.webp",
+      "displayName": "ชั้น ป.4"
     },
     {
       "name": "grade5",
@@ -38,7 +42,8 @@
       "audioFolder": "p5",
       "card_back_txt": "Grade 5",
       "count": "254 words",
-      "image": "/assets/05_p5.webp"
+      "image": "/assets/05_p5.webp",
+      "displayName": "ชั้น ป.5"
     },
     {
       "name": "grade6",
@@ -46,7 +51,8 @@
       "audioFolder": "p6",
       "card_back_txt": "Grade 6",
       "count": "250 words",
-      "image": "/assets/06_p6.webp"
+      "image": "/assets/06_p6.webp",
+      "displayName": "ชั้น ป.6"
     },
     {
       "name": "day",
@@ -54,7 +60,8 @@
       "audioFolder": "day",
       "card_back_txt": "Days",
       "count": "7 words",
-      "image": "/assets/07_day.webp"
+      "image": "/assets/07_day.webp",
+      "displayName": "วัน"
     },
     {
       "name": "month",
@@ -62,7 +69,8 @@
       "audioFolder": "month",
       "card_back_txt": "Months",
       "count": "12 words",
-      "image": "/assets/08_month.webp"
+      "image": "/assets/08_month.webp",
+      "displayName": "เดือน"
     },
     {
       "name": "color",
@@ -70,7 +78,8 @@
       "audioFolder": "color",
       "card_back_txt": "Colors",
       "count": "50 words",
-      "image": "/assets/09_color.webp"
+      "image": "/assets/09_color.webp",
+      "displayName": "สี"
     },
     {
       "name": "verb",
@@ -78,7 +87,8 @@
       "audioFolder": "verb",
       "card_back_txt": "Verbs",
       "count": "50 words",
-      "image": "/assets/10_verb.webp"
+      "image": "/assets/10_verb.webp",
+      "displayName": "คำกริยา"
     },
     {
       "name": "profession",
@@ -86,7 +96,8 @@
       "audioFolder": "profession",
       "card_back_txt": "Professions",
       "count": "90 words",
-      "image": "/assets/11_profession.webp"
+      "image": "/assets/11_profession.webp",
+      "displayName": "อาชีพ"
     },
     {
       "name": "animal",
@@ -94,7 +105,8 @@
       "audioFolder": "animal",
       "card_back_txt": "Animals",
       "count": "120 words",
-      "image": "/assets/12_animal.webp"
+      "image": "/assets/12_animal.webp",
+      "displayName": "สัตว์"
     }
   ]
 }

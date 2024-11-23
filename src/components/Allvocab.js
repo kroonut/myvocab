@@ -34,22 +34,22 @@ function Allvocab() {
 
   return (
     <div className="container-fluid allvocabcss">
-      <h1 className="page-title text-center">All Vocabulary</h1>
+      <h1 className="page-title text-center">คำศัพท์ทั้งหมด</h1>
 
+      {/* Category Dropdown */}
       <div className="d-flex justify-content-center align-items-center mb-4">
-  {/* Label */}
-  <label htmlFor="vocabDropdown" className="form-label me-2 mb-0">
-    เลือกหมวดหมู่:
-  </label>
+        <label htmlFor="vocabDropdown" className="form-label me-2 mb-0">
+          เลือกหมวดหมู่:
+        </label>
         <select
           className="form-select"
-          style={{ width: '150px' }} // Custom width for the dropdown
+          style={{ width: '150px' }}
           value={selectedCategory.name}
           onChange={handleCategoryChange}
         >
           {config.categories.map((category) => (
             <option key={category.name} value={category.name}>
-              {category.name}
+              {category.displayName} {/* Show category in Thai */}
             </option>
           ))}
         </select>
@@ -60,7 +60,7 @@ function Allvocab() {
         {vocabList.map((item, index) => (
           <div className="vocab-card" key={index}>
             {/* Category Badge */}
-            <span className="top-left-badge">{selectedCategory.name}</span>
+            <span className="top-left-badge">{selectedCategory.displayName}</span>
             {/* Index Badge */}
             <span className="top-right-badge">{index + 1}</span>
 

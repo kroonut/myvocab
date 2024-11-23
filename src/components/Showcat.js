@@ -80,16 +80,9 @@ const Showcat = () => {
     const rangeValue = e.target.value.trim();
     setRange(rangeValue);
 
-    if (/^\d+$/.test(rangeValue)) {
-      const index = parseInt(rangeValue, 10) - 1;
-      if (index >= 0 && index < vocabList.length) {
-        setCurrentWordIndex(index);
-      }
-    } else {
-      const [start, end] = rangeValue.split('-').map((num) => parseInt(num.trim(), 10) - 1);
-      if (!isNaN(start) && !isNaN(end) && start >= 0 && end < vocabList.length && start <= end) {
-        setCurrentWordIndex(start);
-      }
+    const [start, end] = rangeValue.split('-').map((num) => parseInt(num.trim(), 10) - 1);
+    if (!isNaN(start) && !isNaN(end) && start >= 0 && end < vocabList.length && start <= end) {
+      setCurrentWordIndex(start);
     }
   };
 
@@ -143,7 +136,9 @@ const Showcat = () => {
 
   return (
     <div className="container-fluid">
-      <h1 className="vocab-title">Vocabulary List - {categoryName}</h1>
+      <h1 className="vocab-title">
+        คำศัพท์ในหมวด: {selectedCategory?.displayName || categoryName}
+      </h1>
 
       {/* Header Section with Category Selection */}
       <div className="header-section">
@@ -156,15 +151,15 @@ const Showcat = () => {
         >
           {config.categories.map((category) => (
             <option key={category.name} value={category.name}>
-              {category.name}
+              {category.displayName} {/* Use displayName for Thai names */}
             </option>
           ))}
         </select>
-        <span>No. {currentWordIndex + 1}/{vocabList.length}</span>
+        <span>คำที่ {currentWordIndex + 1}/{vocabList.length}</span>
       </div>
 
       {vocabList.length === 0 ? (
-        <p className="text-center">No words available for the selected category.</p>
+        <p className="text-center">ไม่พบคำศัพท์ในหมวดหมู่นี้</p>
       ) : (
         <>
           <div className="vocab-display-container">

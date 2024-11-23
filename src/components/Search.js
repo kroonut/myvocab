@@ -1,4 +1,3 @@
-// src/components/Search.js
 import React, { useEffect, useState } from 'react';
 import config from '../config.json';
 import './Search.css';
@@ -20,7 +19,7 @@ const Search = () => {
           // Add category-specific information (name and audio folder) to each vocab item
           const categoryData = data.map(item => ({
             ...item,
-            categoryName: category.name,
+            categoryName: category.displayName, // Use displayName for Thai category names
             audioFolder: category.audioFolder,
           }));
 
@@ -57,7 +56,7 @@ const Search = () => {
 
   return (
     <div className="container-fluid searchvocabcss">
-      <h1 className="text-center">Search Vocabulary</h1>
+      <h1 className="text-center">ค้นหาคำศัพท์</h1>
 
       {/* Search Input */}
       <div className="d-flex justify-content-center mb-4">
@@ -75,7 +74,9 @@ const Search = () => {
         <div className="allvocab-card-container">
           {filteredVocabList.map((item, index) => (
             <div className="allvocab-card" key={index}>
+              {/* Category Badge */}
               <span className="level-badge">{item.categoryName}</span>
+              {/* Index Badge */}
               <span className="index-badge">{index + 1}</span>
 
               <div className="allvocab-card-body">
@@ -96,7 +97,7 @@ const Search = () => {
 
       {/* Display message if there are no search results */}
       {searchQuery && filteredVocabList.length === 0 && (
-        <p className="text-center">No results found.</p>
+        <p className="text-center">ไม่พบคำศัพท์ที่ค้นหา</p>
       )}
     </div>
   );
