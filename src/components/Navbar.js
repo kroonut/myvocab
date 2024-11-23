@@ -52,18 +52,13 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/randomvocab" className="nav-link" onClick={toggleMenu}>
-              <i className="fas fa-random"></i> Randomvocab
-            </Link>
-          </li>
-          <li className="nav-item">
             <Link to="/CategoriesList" className="nav-link" onClick={toggleMenu}>
-              <i className="fas fa-random"></i> CategoriesList
+              <i className="fas fa-random"></i> หมวดหมู๋
             </Link>
           </li>
           <li className="nav-item">
             <Link to="/VocabQuizGame" className="nav-link" onClick={toggleMenu}>
-              <i className="fas fa-random"></i> VocabQuizGame
+              <i className="fas fa-gamepad"></i> เกมส์
             </Link>
           </li>          
         </ul>
