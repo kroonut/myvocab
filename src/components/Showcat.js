@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import config from '../config.json';
-import './Vocabulary.css'; // Reuse Vocabulary.css for styling
+import './Vocabulary.css';
 
 const Showcat = () => {
   const { categoryName } = useParams();
@@ -12,19 +12,22 @@ const Showcat = () => {
   const [range, setRange] = useState("1-5");
   const [isAutoPlay, setIsAutoPlay] = useState(false);
   const [intervalId, setIntervalId] = useState(null);
+  const [previousIndex, setPreviousIndex] = useState(null);
 
+  // Load Vocabulary Data
   const loadVocabData = useCallback(async (fileName) => {
     try {
       const response = await fetch(`${process.env.PUBLIC_URL}/vocab-data/${fileName}`);
       if (!response.ok) throw new Error('Failed to load vocabulary data.');
       const data = await response.json();
       setVocabList(data);
-      setCurrentWordIndex(0);
+      setCurrentWordIndex(0); // Reset index
     } catch (error) {
       console.error('Error loading vocabulary data:', error);
     }
   }, []);
 
+  // Set Category and Load Data
   useEffect(() => {
     const category = config.categories.find(
       (cat) => cat.name.toLowerCase() === categoryName.toLowerCase()
@@ -36,23 +39,21 @@ const Showcat = () => {
     }
   }, [categoryName, loadVocabData]);
 
-  const handleCategoryChange = (e) => {
-    const category = config.categories.find(cat => cat.name === e.target.value);
-    if (category) {
-      setSelectedCategory(category);
-      loadVocabData(category.fileName);
-    }
-  };
-
+  // Play Audio for Current Word
   const playAudio = useCallback(() => {
     const currentWord = vocabList[currentWordIndex];
-    if (currentWord && currentWord.audioFile && selectedCategory) {
+    if (currentWord?.audioFile && selectedCategory) {
       const audioPath = `${process.env.PUBLIC_URL}/wav/${selectedCategory.audioFolder}/${currentWord.audioFile}`;
       const audio = new Audio(audioPath);
-      audio.play().catch((error) => console.error('Error playing audio:', error));
+
+      audio
+        .play()
+        .then(() => console.log(`Playing: ${currentWord.word}`))
+        .catch((error) => console.error('Error playing audio:', error));
     }
   }, [currentWordIndex, vocabList, selectedCategory]);
 
+  // Stop Autoplay
   const stopAutoPlay = () => {
     if (intervalId) {
       clearInterval(intervalId);
@@ -61,18 +62,71 @@ const Showcat = () => {
     setIsAutoPlay(false);
   };
 
+  // Toggle Autoplay with Range Validation
   const toggleAutoPlay = () => {
     if (isAutoPlay) {
       stopAutoPlay();
     } else {
+      // ตรวจสอบและจัดการรูปแบบช่วงคำ
+      let start, end;
+      const rangeParts = range.split('-').map((num) => parseInt(num.trim(), 10) - 1);
+
+      if (rangeParts.length === 1) {
+        // กรณีคำเดียว เช่น "1"
+        start = end = rangeParts[0];
+      } else if (rangeParts.length === 2) {
+        // กรณีช่วงคำ เช่น "1-5"
+        [start, end] = rangeParts;
+      } else {
+        alert('รูปแบบช่วงคำไม่ถูกต้อง');
+        return;
+      }
+
+      // ตรวจสอบความถูกต้องของค่า start และ end
+      if (
+        isNaN(start) ||
+        isNaN(end) ||
+        start < 0 ||
+        end >= vocabList.length ||
+        start > end
+      ) {
+        alert('ช่วงคำไม่ถูกต้อง');
+        return;
+      }
+
+      // ตั้งค่าดัชนีเริ่มต้นและเล่นคำแรกทันที
+      setCurrentWordIndex(start);
       playAudio();
+
+      // เริ่ม autoplay
       const id = setInterval(() => {
-        setCurrentWordIndex((prevIndex) =>
-          prevIndex < vocabList.length - 1 ? prevIndex + 1 : 0
-        );
+        if (start === end) {
+          playAudio(); // เล่นคำเดิมซ้ำในกรณีคำเดียว
+        } else {
+          setCurrentWordIndex((prevIndex) => {
+            const nextIndex = prevIndex < end ? prevIndex + 1 : start;
+            return nextIndex;
+          });
+        }
       }, delay * 1000);
+
       setIntervalId(id);
       setIsAutoPlay(true);
+    }
+  };
+
+  // Sync Audio Playback with Index Change
+  useEffect(() => {
+    if (previousIndex !== currentWordIndex) {
+      playAudio();
+      setPreviousIndex(currentWordIndex);
+    }
+  }, [currentWordIndex, playAudio, previousIndex]);
+
+  // Navigate to Specific Index
+  const goToIndex = (index) => {
+    if (index >= 0 && index < vocabList.length) {
+      setCurrentWordIndex(index);
     }
   };
 
@@ -80,38 +134,14 @@ const Showcat = () => {
     const rangeValue = e.target.value.trim();
     setRange(rangeValue);
 
-    const [start, end] = rangeValue.split('-').map((num) => parseInt(num.trim(), 10) - 1);
-    if (!isNaN(start) && !isNaN(end) && start >= 0 && end < vocabList.length && start <= end) {
-      setCurrentWordIndex(start);
+    const [start] = rangeValue.split('-').map((num) => parseInt(num.trim(), 10) - 1);
+    if (!isNaN(start) && start >= 0 && start < vocabList.length) {
+      goToIndex(start);
     }
   };
 
   const handleDelayChange = (e) => {
     setDelay(Number(e.target.value));
-  };
-
-  const goToNext = () => {
-    setCurrentWordIndex((prevIndex) =>
-      prevIndex < vocabList.length - 1 ? prevIndex + 1 : 0
-    );
-    playAudio();
-  };
-
-  const goToPrevious = () => {
-    setCurrentWordIndex((prevIndex) =>
-      prevIndex > 0 ? prevIndex - 1 : vocabList.length - 1
-    );
-    playAudio();
-  };
-
-  const goToFirst = () => {
-    setCurrentWordIndex(0);
-    playAudio();
-  };
-
-  const goToLast = () => {
-    setCurrentWordIndex(vocabList.length - 1);
-    playAudio();
   };
 
   const highlightVowels = (word) => {
@@ -140,18 +170,22 @@ const Showcat = () => {
         คำศัพท์ในหมวด: {selectedCategory?.displayName || categoryName}
       </h1>
 
-      {/* Header Section with Category Selection */}
+      {/* Header Section */}
       <div className="header-section">
         <label htmlFor="vocabDropdown">เลือกหมวดหมู่:</label>
         <select
           id="vocabDropdown"
           className="form-select d-inline-block"
-          onChange={handleCategoryChange}
+          onChange={(e) => {
+            const category = config.categories.find(cat => cat.name === e.target.value);
+            setSelectedCategory(category);
+            loadVocabData(category.fileName);
+          }}
           value={selectedCategory?.name || ""}
         >
           {config.categories.map((category) => (
             <option key={category.name} value={category.name}>
-              {category.displayName} {/* Use displayName for Thai names */}
+              {category.displayName}
             </option>
           ))}
         </select>
@@ -171,8 +205,8 @@ const Showcat = () => {
             </div>
           </div>
 
+          {/* Controls */}
           <div className="controls">
-            {/* Input Controls for Delay and Range */}
             <div className="input-controls">
               <div>
                 <label>เวลา (วินาที):</label>
@@ -197,18 +231,34 @@ const Showcat = () => {
               </div>
             </div>
 
-            {/* Navigation and Playback Controls */}
+            {/* Navigation Buttons */}
             <div className="button-controls">
-              <button className="btn btn-outline-primary btn-sm" onClick={goToFirst}>
+              <button
+                className="btn btn-outline-primary btn-sm"
+                onClick={() => goToIndex(0)}
+              >
                 <i className="fas fa-angle-double-left"></i>
               </button>
-              <button className="btn btn-outline-primary btn-sm" onClick={goToPrevious}>
+              <button
+                className="btn btn-outline-primary btn-sm"
+                onClick={() =>
+                  goToIndex(currentWordIndex > 0 ? currentWordIndex - 1 : vocabList.length - 1)
+                }
+              >
                 <i className="fas fa-angle-left"></i>
               </button>
-              <button className="btn btn-outline-primary btn-sm" onClick={goToNext}>
+              <button
+                className="btn btn-outline-primary btn-sm"
+                onClick={() =>
+                  goToIndex(currentWordIndex < vocabList.length - 1 ? currentWordIndex + 1 : 0)
+                }
+              >
                 <i className="fas fa-angle-right"></i>
               </button>
-              <button className="btn btn-outline-primary btn-sm" onClick={goToLast}>
+              <button
+                className="btn btn-outline-primary btn-sm"
+                onClick={() => goToIndex(vocabList.length - 1)}
+              >
                 <i className="fas fa-angle-double-right"></i>
               </button>
               <button className="btn btn-outline-primary btn-sm" onClick={playAudio}>

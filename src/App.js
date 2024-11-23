@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer'; // Import Footer component
 import Vocabulary from './components/Vocabulary';
 import Showcat from './components/Showcat';
 import Allvocab from './components/Allvocab';
@@ -38,6 +39,7 @@ function App() {
           <Route path="/VocabQuizGame" element={<VocabQuizGame />} />
         </Routes>
       </div>
+      <Footer /> {/* Add Footer here */}
     </div>
   );
 }

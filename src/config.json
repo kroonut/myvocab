@@ -5,7 +5,6 @@
       "fileName": "01_p1.json",
       "audioFolder": "p1",
       "card_back_txt": "Grade 1",
-      "count": "155 words",
       "image": "/assets/01_p1.webp",
       "displayName": "ชั้น ป.1"
     },
@@ -14,7 +13,6 @@
       "fileName": "02_p2.json",
       "audioFolder": "p2",
       "card_back_txt": "Grade 2",
-      "count": "159 words",
       "image": "/assets/02_p2.webp",
       "displayName": "ชั้น ป.2"
     },
@@ -23,7 +21,6 @@
       "fileName": "03_p3.json",
       "audioFolder": "p3",
       "card_back_txt": "Grade 3",
-      "count": "154 words",
       "image": "/assets/03_p3.webp",
       "displayName": "ชั้น ป.3"
     },
@@ -32,7 +29,6 @@
       "fileName": "04_p4.json",
       "audioFolder": "p4",
       "card_back_txt": "Grade 4",
-      "count": "255 words",
       "image": "/assets/04_p4.webp",
       "displayName": "ชั้น ป.4"
     },
@@ -41,7 +37,6 @@
       "fileName": "05_p5.json",
       "audioFolder": "p5",
       "card_back_txt": "Grade 5",
-      "count": "254 words",
       "image": "/assets/05_p5.webp",
       "displayName": "ชั้น ป.5"
     },
@@ -50,7 +45,6 @@
       "fileName": "06_p6.json",
       "audioFolder": "p6",
       "card_back_txt": "Grade 6",
-      "count": "250 words",
       "image": "/assets/06_p6.webp",
       "displayName": "ชั้น ป.6"
     },
@@ -59,7 +53,6 @@
       "fileName": "07_day.json",
       "audioFolder": "day",
       "card_back_txt": "Days",
-      "count": "7 words",
       "image": "/assets/07_day.webp",
       "displayName": "วัน"
     },
@@ -68,7 +61,6 @@
       "fileName": "08_month.json",
       "audioFolder": "month",
       "card_back_txt": "Months",
-      "count": "12 words",
       "image": "/assets/08_month.webp",
       "displayName": "เดือน"
     },
@@ -77,7 +69,6 @@
       "fileName": "09_color.json",
       "audioFolder": "color",
       "card_back_txt": "Colors",
-      "count": "50 words",
       "image": "/assets/09_color.webp",
       "displayName": "สี"
     },
@@ -86,7 +77,6 @@
       "fileName": "10_verb.json",
       "audioFolder": "verb",
       "card_back_txt": "Verbs",
-      "count": "50 words",
       "image": "/assets/10_verb.webp",
       "displayName": "คำกริยา"
     },
@@ -95,7 +85,6 @@
       "fileName": "11_profession.json",
       "audioFolder": "profession",
       "card_back_txt": "Professions",
-      "count": "90 words",
       "image": "/assets/11_profession.webp",
       "displayName": "อาชีพ"
     },
@@ -104,7 +93,6 @@
       "fileName": "12_animal.json",
       "audioFolder": "animal",
       "card_back_txt": "Animals",
-      "count": "120 words",
       "image": "/assets/12_animal.webp",
       "displayName": "สัตว์"
     }
