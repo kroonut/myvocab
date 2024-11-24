@@ -105,20 +105,29 @@ const VocabQuizGame = () => {
 
   if (!isGameStarted) {
     return (
-      <div className="container d-flex flex-column align-items-center justify-content-center min-vh-100">
-        <h1 className="mb-4">Welcome to Vocab Quiz Game</h1>
+      <div className="container d-flex flex-column align-items-center justify-content-center mt-3">
+        <h1 className="title">Welcome to Vocab Quiz Game</h1>
         <div className="mb-3 text-center">
           <label htmlFor="playerNameInput" className="form-label">
             กรอกชื่อของคุณ:
           </label>
           <input
-            type="text"
-            id="playerNameInput"
-            className="form-control name-input"
-            value={playerName}
-            onChange={(e) => setPlayerName(e.target.value)}
-            placeholder="Enter your name"
-          />
+  type="text"
+  id="playerNameInput"
+  className="form-control name-input"
+  value={playerName}
+  onChange={(e) => {
+    const value = e.target.value;
+    // Regular expression to allow only Thai, English, and numbers
+    const regex = /^[\u0E00-\u0E7Fa-zA-Z0-9 ]*$/;
+    if (regex.test(value)) {
+      setPlayerName(value); // Update playerName only if it matches the regex
+    }
+  }}
+  placeholder="Your Name"
+/>
+
+
         </div>
         <button className="btn btn-primary" onClick={startGame}>
           เริ่มเกม
@@ -128,25 +137,25 @@ const VocabQuizGame = () => {
   }
 
   return (
-    <div className="container d-flex flex-column align-items-center justify-content-center min-vh-100">
+    <div className="container d-flex flex-column align-items-center justify-content-center mt-3">
       {/* Dropdowns Section */}
       <div className="dropdowns-container text-center mb-4">
         <div className="d-inline-block me-3">
           <label htmlFor="categoryDropdown" className="form-label">
-            เลือกประเภท:
+            เลือกหมวดหมู่:
           </label>
           <select
-          className="form-select"
-          style={{ width: '150px' }}
-          value={selectedCategory.name}
-          onChange={handleCategoryChange}
-        >
-          {config.categories.map((category) => (
-            <option key={category.name} value={category.name}>
-              {category.displayName} {/* Show category in Thai */}
-            </option>
-          ))}
-        </select>
+            className="form-select"
+            style={{ width: '150px' }}
+            value={selectedCategory.name}
+            onChange={handleCategoryChange}
+          >
+            {config.categories.map((category) => (
+              <option key={category.name} value={category.name}>
+                {category.displayName} {/* Show category in Thai */}
+              </option>
+            ))}
+          </select>
         </div>
         <div className="d-inline-block">
           <label htmlFor="numQuestionsDropdown" className="form-label">

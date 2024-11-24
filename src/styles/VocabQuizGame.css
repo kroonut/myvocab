@@ -5,6 +5,15 @@
   font-family: 'Kanit', sans-serif;
 }
 
+/* Center the Vocabulary List title */
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  padding: 5px;
+}
+
 /* Dropdowns Section */
 .dropdowns-container {
   margin-bottom: 20px;
@@ -29,10 +38,10 @@
 }
 
 .card-header {
-  background-color: #007bff;
-  color: white;
+  background-color: #ccc;
+  color: #333;
   padding: 10px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,17 +49,17 @@
 
 .player-name {
   text-align: left;
-  font-weight: bold;
+
 }
 
 .question-number {
   text-align: center;
-  font-weight: bold;
+
 }
 
 .player-points {
   text-align: right;
-  font-weight: bold;
+
 }
 
 .card-body {
@@ -76,6 +85,7 @@
 }
 
 .quiz-option {
+  font-family: 'Poppins', 'Kanit';
   flex: 1;
   text-align: left;
   height: 60px;
@@ -199,6 +209,9 @@ h1 {
 
   .form-select {
     width: 120px;
+    gap: 10px;
+    padding: 5px;
+
   }
 
   .btn-primary,

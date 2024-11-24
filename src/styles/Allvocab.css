@@ -13,6 +13,25 @@
   font-family: 'Kanit', sans-serif;
 }
 
+/* Center the Vocabulary List title */
+.allvocabcss .title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  padding: 5px;
+}
+/* Highlight number styles */
+.highlight-number {
+  color: white;
+  background-color: blue;
+  padding: 0 10px;
+  border-radius: 10px;
+}
+.red-highlight {
+  color: red;
+}
+
 /* Header Section */
 .allvocabcss .header-section {
   display: flex;
@@ -28,6 +47,24 @@
 
 .allvocabcss .header-section span {
   font-size: 1rem;
+}
+
+/* Responsive - Header Section (3 Rows on Small Screens) */
+@media (max-width: 768px) {
+  .allvocabcss .header-section {
+    flex-direction: column; /* Stack elements vertically */
+    gap: 15px; /* Space between rows */
+  }
+
+  .allvocabcss .header-section > * {
+    width: 100%; /* Make each element take up full width */
+    text-align: center; /* Center-align text */
+  }
+
+  .allvocabcss .header-section select {
+    max-width: 200px; /* Limit dropdown width */
+    margin: 0 auto; /* Center dropdown */
+  }
 }
 
 /* Vocabulary Card Container */
@@ -139,16 +176,6 @@
 @media (max-width: 1024px) {
   .allvocabcss .vocab-card-container {
     grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
-  }
-
-  .allvocabcss .header-section {
-    flex-direction: column; /* Stack elements vertically */
-    align-items: flex-start; /* Align dropdown and count to the left */
-  }
-
-  .allvocabcss .header-section select {
-    margin-bottom: 10px; /* Space below dropdown on smaller screens */
-    margin-right: 0; /* Remove margin-right for stacked layout */
   }
 }
 

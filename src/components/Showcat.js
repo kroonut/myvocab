@@ -166,7 +166,7 @@ const Showcat = () => {
 
   return (
     <div className="container-fluid">
-      <h1 className="vocab-title">
+      <h1 className="vocab-title">หมวดหมู่ : {''}
       {selectedCategory?.displayName || categoryName}
       </h1>
 

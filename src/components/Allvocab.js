@@ -2,27 +2,40 @@ import React, { useEffect, useState } from 'react';
 import config from '../config.json';
 import '../styles/Allvocab.css';
 
-function Allvocab() {
-  const [vocabList, setVocabList] = useState([]); // Vocabulary data for the current category
-  const [selectedCategory, setSelectedCategory] = useState(config.categories[0]); // Currently selected category
-  const [totalVocabCount, setTotalVocabCount] = useState(0); // Total vocabulary count
-
-  // Function to calculate the total vocabulary count
-  const calculateTotalVocabCount = async () => {
-    let total = 0;
-    for (const category of config.categories) {
-      try {
-        const response = await fetch(`${process.env.PUBLIC_URL}/vocab-data/${category.fileName}`);
-        const data = await response.json();
-        total += data.length; // Add the length of each category's data
-      } catch (error) {
-        console.error(`Error loading data for category ${category.name}:`, error);
-      }
+// Function to highlight vowels in red
+const highlightVowels = (text) => {
+  return text.split('').map((char, index) => {
+    if (/[AEIOUaeiou]/.test(char)) { // Check if the character is a vowel
+      return (
+        <span key={index} style={{ color: 'red' }}>
+          {char}
+        </span>
+      );
     }
-    setTotalVocabCount(total); // Update the total count
+    return char; // Return non-vowel characters unchanged
+  });
+};
+
+function Allvocab() {
+  const [vocabList, setVocabList] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(config.categories[0]);
+  const [totalVocabCount, setTotalVocabCount] = useState(0);
+
+  const calculateTotalVocabCount = async () => {
+    try {
+      const total = await Promise.all(
+        config.categories.map(async (category) => {
+          const response = await fetch(`${process.env.PUBLIC_URL}/vocab-data/${category.fileName}`);
+          const data = await response.json();
+          return data.length;
+        })
+      ).then((counts) => counts.reduce((acc, count) => acc + count, 0));
+      setTotalVocabCount(total);
+    } catch (error) {
+      console.error("Error calculating total vocabulary count:", error);
+    }
   };
 
-  // Load vocabulary data for the selected category
   const loadVocabData = async (fileName) => {
     try {
       const response = await fetch(`${process.env.PUBLIC_URL}/vocab-data/${fileName}`);
@@ -33,25 +46,21 @@ function Allvocab() {
     }
   };
 
-  // Initial load and update on category change
   useEffect(() => {
-    calculateTotalVocabCount(); // Calculate the total vocabulary count
-    loadVocabData(selectedCategory.fileName); // Load data for the initially selected category
+    calculateTotalVocabCount();
+    loadVocabData(selectedCategory.fileName);
   }, []);
 
-  // Update data when a new category is selected
   useEffect(() => {
     loadVocabData(selectedCategory.fileName);
   }, [selectedCategory]);
 
-  // Handle category selection change
   const handleCategoryChange = (event) => {
     const categoryName = event.target.value;
     const category = config.categories.find((cat) => cat.name === categoryName);
     setSelectedCategory(category);
   };
 
-  // Function to play audio
   const playAudio = (audioFile) => {
     const audio = new Audio(`${process.env.PUBLIC_URL}/wav/${selectedCategory.audioFolder}/${audioFile}`);
     audio.play().catch((error) => console.error("Error playing audio:", error));
@@ -59,18 +68,19 @@ function Allvocab() {
 
   return (
     <div className="container-fluid allvocabcss">
-      <h1 className="text-center">
+      <h1 className="title">
         คำศัพท์ทั้งหมด{" "}
-        <span style={{ color: "blue" }}>{config.categories.length}</span> หมวดหมู่ จำนวน{" "}
-        <span style={{ color: "blue" }}>{totalVocabCount}</span> คำ
+        <span className="highlight-number">{config.categories.length}</span> หมวดหมู่
+        <br /><br />
+        จำนวน{" "}
+        <span className="highlight-number">{totalVocabCount}</span> คำ
       </h1>
 
       {/* Category Dropdown */}
       <div className="header-section">
         <label htmlFor="vocabDropdown">เลือกหมวดหมู่:</label>
         <select
-          className="form-select"
-          style={{ width: '150px', display: 'inline-block', marginRight: '10px' }}
+          className="form-select dropdown-select"
           value={selectedCategory.name}
           onChange={handleCategoryChange}
         >
@@ -80,27 +90,20 @@ function Allvocab() {
             </option>
           ))}
         </select>
-
-        {/* Display word count for selected category */}
-        <span className="ms-1" >
-          {vocabList.length} คำ
-        </span>
+        <span className="category-count">{vocabList.length} คำ</span>
       </div>
 
       {/* Vocabulary Cards */}
       <div className="vocab-card-container">
         {vocabList.map((item, index) => (
           <div className="vocab-card" key={index}>
-            {/* Category Badge */}
             <span className="top-left-badge">{selectedCategory.displayName}</span>
-            {/* Index Badge */}
             <span className="top-right-badge">{index + 1}</span>
-
             <div className="vocab-card-body">
-              <h2 className="vocab-card-title">{item.word}</h2>
-              <p className="vocab-card-text">{item.translation}</p>
+              <h2 className="vocab-card-title">{highlightVowels(item.word)}</h2>
+              <p className="vocab-card-text">{highlightVowels(item.translation)}</p>
               <button
-                className="vocab-card-button btn btn-primary"
+                className="vocab-card-button"
                 onClick={() => playAudio(item.audioFile)}
                 aria-label="Play audio"
               >

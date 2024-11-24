@@ -9,9 +9,25 @@ const Allvocabcat = () => {
   const [vocabList, setVocabList] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Highlight vowels in words or translations
+  const highlightVowels = (text) => {
+    return text.split('').map((char, index) => {
+      if (/[AEIOUaeiou]/.test(char)) {
+        return (
+          <span key={index} style={{ color: 'red' }}>
+            {char}
+          </span>
+        );
+      }
+      return char;
+    });
+  };
 
   // Load vocabulary data for the selected category
   const loadVocabData = async (fileName) => {
+    setIsLoading(true);
     try {
       const response = await fetch(`${process.env.PUBLIC_URL}/vocab-data/${fileName}`);
       if (!response.ok) throw new Error("Failed to load vocabulary data.");
@@ -21,6 +37,8 @@ const Allvocabcat = () => {
     } catch (error) {
       console.error("Error loading vocabulary data:", error);
       setErrorMessage("ไม่สามารถโหลดคำศัพท์ได้");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -54,11 +72,17 @@ const Allvocabcat = () => {
 
   return (
     <div className="container-fluid allvocabcss">
-      <h1 className="page-title text-center">
+      <h1 className="title">หมวดหมู่ : {''}
         {selectedCategory ? selectedCategory.displayName : "หมวดหมู่ไม่พบ"}
       </h1>
 
-      {errorMessage ? (
+      {isLoading ? (
+        <div className="text-center">
+          <div className="spinner-border text-primary" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      ) : errorMessage ? (
         <p className="text-center text-danger">{errorMessage}</p>
       ) : (
         <>
@@ -91,8 +115,8 @@ const Allvocabcat = () => {
                 <span className="top-left-badge">{selectedCategory.displayName}</span>
                 <span className="top-right-badge">{index + 1}</span>
                 <div className="vocab-card-body">
-                  <h2 className="vocab-card-title">{item.word}</h2>
-                  <p className="vocab-card-text">{item.translation}</p>
+                  <h2 className="vocab-card-title">{highlightVowels(item.word)}</h2>
+                  <p className="vocab-card-text">{highlightVowels(item.translation)}</p>
                   <button
                     className="vocab-card-button btn btn-primary"
                     onClick={() => playAudio(item.audioFile)}

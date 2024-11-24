@@ -6,10 +6,12 @@ const Search = () => {
   const [allVocabList, setAllVocabList] = useState([]); // All vocab data across categories
   const [filteredVocabList, setFilteredVocabList] = useState([]); // Filtered results for search
   const [searchQuery, setSearchQuery] = useState('');
+  const [isLoading, setIsLoading] = useState(false); // Loading state
 
   // Load all vocabulary data on component mount
   useEffect(() => {
     const loadAllVocabData = async () => {
+      setIsLoading(true);
       let combinedData = [];
       for (const category of config.categories) {
         try {
@@ -19,7 +21,7 @@ const Search = () => {
           // Add category-specific information (name and audio folder) to each vocab item
           const categoryData = data.map(item => ({
             ...item,
-            categoryName: category.displayName, // Use displayName for Thai category names
+            categoryName: category.displayName,
             audioFolder: category.audioFolder,
           }));
 
@@ -29,6 +31,7 @@ const Search = () => {
         }
       }
       setAllVocabList(combinedData);
+      setIsLoading(false);
     };
 
     loadAllVocabData();
@@ -54,9 +57,23 @@ const Search = () => {
     audio.play().catch((error) => console.error("Error playing audio:", error));
   };
 
+  // Highlight vowels in the text
+  const highlightVowels = (text) => {
+    return text.split('').map((char, index) => {
+      if (/[AEIOUaeiou]/.test(char)) {
+        return (
+          <span key={index} className="highlight-vowel">
+            {char}
+          </span>
+        );
+      }
+      return char;
+    });
+  };
+
   return (
     <div className="container-fluid searchvocabcss">
-      <h1 className="text-center">ค้นหาคำศัพท์</h1>
+      <h1 className="title">ค้นหาคำศัพท์</h1>
 
       {/* Search Input */}
       <div className="d-flex justify-content-center mb-4">
@@ -64,13 +81,22 @@ const Search = () => {
           type="text"
           value={searchQuery}
           onChange={handleSearchChange}
-          placeholder="ค้นหาคำศัพท์"
+          placeholder="ค้นหา"
           className="form-control search-input"
         />
       </div>
 
-      {/* Vocabulary Cards - Only show if there are results */}
-      {filteredVocabList.length > 0 && (
+      {/* Loading Spinner */}
+      {isLoading && (
+        <div className="text-center">
+          <div className="spinner-border text-primary" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      )}
+
+      {/* Vocabulary Cards */}
+      {!isLoading && filteredVocabList.length > 0 && (
         <div className="allvocab-card-container">
           {filteredVocabList.map((item, index) => (
             <div className="allvocab-card" key={index}>
@@ -80,8 +106,8 @@ const Search = () => {
               <span className="index-badge">{index + 1}</span>
 
               <div className="allvocab-card-body">
-                <h5 className="allvocab-card-title">{item.word}</h5>
-                <p className="allvocab-card-text">{item.translation}</p>
+                <h5 className="allvocab-card-title">{highlightVowels(item.word)}</h5>
+                <p className="allvocab-card-text">{highlightVowels(item.translation)}</p>
                 <button
                   className="allvocab-card-button btn btn-primary"
                   onClick={() => playAudio(item.audioFile, item.audioFolder)}
@@ -96,7 +122,7 @@ const Search = () => {
       )}
 
       {/* Display message if there are no search results */}
-      {searchQuery && filteredVocabList.length === 0 && (
+      {!isLoading && searchQuery && filteredVocabList.length === 0 && (
         <p className="text-center">ไม่พบคำศัพท์ที่ค้นหา</p>
       )}
     </div>
