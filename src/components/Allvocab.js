@@ -59,7 +59,7 @@ function Allvocab() {
 
   return (
     <div className="container-fluid allvocabcss">
-      <h1 className="page-title text-center">
+      <h1 className="text-center">
         คำศัพท์ทั้งหมด{" "}
         <span style={{ color: "blue" }}>{config.categories.length}</span> หมวดหมู่ จำนวน{" "}
         <span style={{ color: "blue" }}>{totalVocabCount}</span> คำ

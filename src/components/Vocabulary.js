@@ -155,7 +155,7 @@ const Vocabulary = () => {
 
   return (
     <div className="container-fluid">
-      <h1 className="vocab-title">หมวดหมู่: {selectedCategory.displayName}</h1>
+      <h1 className="vocab-title">{selectedCategory.displayName}</h1>
 
       <div className="header-section">
         <label htmlFor="vocabDropdown">เลือกหมวดหมู่:</label>

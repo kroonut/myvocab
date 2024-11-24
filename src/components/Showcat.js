@@ -167,7 +167,7 @@ const Showcat = () => {
   return (
     <div className="container-fluid">
       <h1 className="vocab-title">
-        คำศัพท์ในหมวด: {selectedCategory?.displayName || categoryName}
+      {selectedCategory?.displayName || categoryName}
       </h1>
 
       {/* Header Section */}

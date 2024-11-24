@@ -55,7 +55,7 @@ const Allvocabcat = () => {
   return (
     <div className="container-fluid allvocabcss">
       <h1 className="page-title text-center">
-        รายการคำศัพท์ - {selectedCategory ? selectedCategory.displayName : "หมวดหมู่ไม่พบ"}
+        {selectedCategory ? selectedCategory.displayName : "หมวดหมู่ไม่พบ"}
       </h1>
 
       {errorMessage ? (
