@@ -1,0 +1,23 @@
+.simple-container {
+    display: flex;
+    flex-direction: column;  /* จัดให้อยู่ในแนวตั้ง */
+    align-items: center;     /* จัดให้อยู่กลางในแนวนอน */
+    justify-content: center; /* จัดให้อยู่กลางในแนวตั้ง */
+    padding: 20px;
+  }
+  
+  .simple-image {
+    width: 100%;             /* ทำให้รูปภาพกว้างเต็ม container */
+    height: auto;            /* รักษาอัตราส่วนของรูปภาพ */
+    border-radius: 8px;      /* มุมโค้งของรูปภาพ */
+    margin-bottom: 20px;     /* ระยะห่างระหว่างรูปภาพและข้อความ */
+  }
+  
+  .simple-text {
+    font-size: 16px;
+    color: #333;
+    text-align: center;      /* จัดข้อความให้อยู่กลาง */
+    max-width: 600px;        /* จำกัดความกว้างของข้อความ */
+    line-height: 1.6;        /* ระยะห่างระหว่างบรรทัด */
+  }
+  

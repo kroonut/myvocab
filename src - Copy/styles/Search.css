@@ -1,0 +1,146 @@
+/* Reset and Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Full-width container */
+.container-fluid {
+  padding: 20px; /* เพิ่ม padding ให้ container */
+  font-family: 'Kanit', sans-serif;
+}
+
+/* Center the Vocabulary List title */
+.searchvocabcss .title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  padding: 5px;
+}
+
+/* Scoped Styles for Search Component */
+.searchvocabcss .search-input {
+  width: 300px;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 1.5rem;
+}
+
+.searchvocabcss .allvocab-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์ */
+  gap: 25px; /* ระยะห่างระหว่างการ์ด */
+  padding: 5px;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.searchvocabcss .allvocab-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s;
+  padding: 1.5rem;
+  position: relative;
+  border: 1px solid #ddd;
+}
+
+.searchvocabcss .allvocab-card:hover {
+  transform: scale(1.05);
+}
+
+.searchvocabcss .level-badge {
+  background-color: #f8f9fa; /* Gray background */
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.3rem 0.5rem;
+  border-radius: 8px;
+  color: #707070;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.searchvocabcss .index-badge {
+  background-color: #f8f9fa; /* Gray background */
+  color: #707070;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.3rem 0.5rem;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.searchvocabcss .allvocab-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchvocabcss .allvocab-card-title {
+  font-family: 'Poppins', 'Kanit';
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+  margin-top: 10px;
+}
+
+.searchvocabcss .allvocab-card-text {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.searchvocabcss .allvocab-card-button {
+  margin-top: 10px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+.searchvocabcss .allvocab-card-button:hover {
+  background-color: #0056b3;
+}
+/* Highlight vowels in search results */
+.highlight-vowel {
+  color: red;
+  font-weight: bold;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 1024px) {
+  .searchvocabcss .allvocab-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .searchvocabcss .allvocab-card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .searchvocabcss .search-input {
+    width: 80%;
+  }
+}
