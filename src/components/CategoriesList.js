@@ -29,8 +29,6 @@ const CategoriesList = () => {
   }, []);
 
   return (
-    <div className="container-fluid">
-      <h1 className="categories-title">เลือกหมวดหมู่คำศัพท์</h1>
       <div className="categories-container">
         {loading ? (
           <div className="loading-indicator">กำลังโหลด...</div>
@@ -51,7 +49,6 @@ const CategoriesList = () => {
           ))
         )}
       </div>
-    </div>
   );
 };
 

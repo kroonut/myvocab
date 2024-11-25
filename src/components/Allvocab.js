@@ -67,7 +67,7 @@ function Allvocab() {
   };
 
   return (
-    <div className="container-fluid allvocabcss">
+    <div className="allvocabcss">
       <h1 className="title">
         คำศัพท์ทั้งหมด{" "}
         <span className="highlight-number">{config.categories.length}</span> หมวดหมู่

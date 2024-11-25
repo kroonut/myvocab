@@ -71,7 +71,7 @@ const Allvocabcat = () => {
   };
 
   return (
-    <div className="container-fluid allvocabcss">
+    <div className="allvocabcss">
       <h1 className="title">หมวดหมู่ : {''}
         {selectedCategory ? selectedCategory.displayName : "หมวดหมู่ไม่พบ"}
       </h1>

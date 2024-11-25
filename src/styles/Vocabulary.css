@@ -5,12 +5,6 @@
   box-sizing: border-box;
 }
 
-/* Full-width container */
-.container-fluid {
-  padding: 20px; /* เพิ่ม padding ให้ container */
-  font-family: 'Kanit', sans-serif;
-}
-
 /* Center the Vocabulary List title */
 .vocab-title {
   text-align: center;

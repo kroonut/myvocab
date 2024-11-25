@@ -7,12 +7,6 @@
   padding: 0;
 }
 
-/* Full-width container */
-.container-fluid {
-  padding: 20px;
-  font-family: 'Kanit', sans-serif;
-}
-
 /* Center the Vocabulary List title */
 .allvocabcss .title {
   text-align: center;
