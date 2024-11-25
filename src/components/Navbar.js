@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       {/* Brand logo and title */}
       <Link to="/" className="navbar-brand">
-        <img src="myvocab/assets/logo.png" alt="Logo" className="navbar-logo" />
+        <img src="/myvocab/assets/logo.png" alt="Logo" className="navbar-logo" />
         English Flashcard
       </Link>
 
