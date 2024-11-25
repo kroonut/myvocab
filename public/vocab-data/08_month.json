@@ -1,0 +1,14 @@
+[
+    { "word": "January", "translation": "มกราคม", "audioFile": "January.wav", "folder": "month" },
+    { "word": "February", "translation": "กุมภาพันธ์", "audioFile": "February.wav", "folder": "month" },
+    { "word": "March", "translation": "มีนาคม", "audioFile": "March.wav", "folder": "month" },
+    { "word": "April", "translation": "เมษายน", "audioFile": "April.wav", "folder": "month" },
+    { "word": "May", "translation": "พฤษภาคม", "audioFile": "May.wav", "folder": "month" },
+    { "word": "June", "translation": "มิถุนายน", "audioFile": "June.wav", "folder": "month" },
+    { "word": "July", "translation": "กรกฎาคม", "audioFile": "July.wav", "folder": "month" },
+    { "word": "August", "translation": "สิงหาคม", "audioFile": "August.wav", "folder": "month" },
+    { "word": "September", "translation": "กันยายน", "audioFile": "September.wav", "folder": "month" },
+    { "word": "October", "translation": "ตุลาคม", "audioFile": "October.wav", "folder": "month" },
+    { "word": "November", "translation": "พฤศจิกายน", "audioFile": "November.wav", "folder": "month" },
+    { "word": "December", "translation": "ธันวาคม", "audioFile": "December.wav", "folder": "month" }
+]

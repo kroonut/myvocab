@@ -1,0 +1,24 @@
+.footer {
+    background-color: #f8f9fa; /* Light gray background */
+    color: #333; /* Dark text */
+    text-align: center;
+    padding: 15px 10px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 14px;
+    border-top: 1px solid #ddd; /* Subtle border at the top */
+  }
+  
+  .footer-content p {
+    margin: 5px 0; /* Space between lines */
+  }
+  
+  .footer-content a {
+    color: #007bff; /* Blue link color */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .footer-content a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  

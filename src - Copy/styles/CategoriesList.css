@@ -1,0 +1,94 @@
+/* Full-width container */
+.container-fluid {
+  padding: 20px; /* เพิ่ม padding ให้ container */
+  font-family: 'Kanit', sans-serif;
+}
+
+/* Center the Vocabulary List title */
+.categories-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  padding: 5px;
+}
+
+.categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Medium spacing for buttons */
+  justify-content: center;
+}
+
+
+.category-link {
+  text-decoration: none;
+}
+
+.category-button {
+  font-family: 'Poppins', 'Kanit', sans-serif;
+  font-size: 1rem; /* Medium font size */
+  padding: 8px 16px; /* Medium padding for buttons */
+  color: #000000;
+  background-color: transparent;
+  border: 1px solid #007bff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Space between icon and text */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.category-button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.category-icon {
+  font-size: 0.9rem; /* Medium icon size */
+  color: #007bff;
+}
+
+.category-button:hover .category-icon {
+  color: #fff;
+}
+
+.loading-indicator {
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.1rem; /* Slightly larger for visibility */
+  color: #555;
+  text-align: center;
+}
+
+/* Medium Button Variant */
+.medium-button {
+  font-size: 1rem; /* Ensure medium font size */
+  padding: 8px 16px; /* Medium padding for consistent look */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.medium-icon {
+  font-size: 0.9rem; /* Adjust icon size for medium buttons */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .categories-container {
+    gap: 12px; /* Adjust gap for smaller screens */
+  }
+
+  .category-button {
+    font-size: 0.9rem; /* Slightly smaller font size for mobile */
+    padding: 6px 12px; /* Adjust padding for mobile */
+  }
+
+  .category-icon {
+    font-size: 0.8rem; /* Adjust icon size for mobile */
+  }
+
+  .categories-list h2 {
+    font-size: 20px; /* Slightly smaller header size for mobile */
+  }
+}
