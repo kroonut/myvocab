@@ -7,7 +7,8 @@
 
 /* Full-width container */
 .container-fluid {
-  padding: 20px; /* เพิ่ม padding ให้ container */
+  padding: 20px;
+  /* เพิ่ม padding ให้ container */
   font-family: 'Kanit', sans-serif;
 }
 
@@ -32,8 +33,9 @@
 
 .searchvocabcss .allvocab-card-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์ */
-  gap: 25px; /* ระยะห่างระหว่างการ์ด */
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 columns layout */
+  gap: 25px;
   padding: 5px;
   width: 100%;
   max-width: 1600px;
@@ -61,7 +63,8 @@
 }
 
 .searchvocabcss .level-badge {
-  background-color: #f8f9fa; /* Gray background */
+  background-color: #f8f9fa;
+  /* Gray background */
   font-size: 0.75rem;
   font-weight: bold;
   padding: 0.3rem 0.5rem;
@@ -73,7 +76,8 @@
 }
 
 .searchvocabcss .index-badge {
-  background-color: #f8f9fa; /* Gray background */
+  background-color: #f8f9fa;
+  /* Gray background */
   color: #707070;
   font-size: 0.75rem;
   font-weight: bold;
@@ -122,6 +126,7 @@
 .searchvocabcss .allvocab-card-button:hover {
   background-color: #0056b3;
 }
+
 /* Highlight vowels in search results */
 .highlight-vowel {
   color: red;

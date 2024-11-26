@@ -154,7 +154,7 @@ const Vocabulary = () => {
   }, [currentWordIndex, isAutoPlay, playAudio]);
 
   return (
-    <div className="container-fluid">
+    <div className="vocab-container">
       <h1 className="vocab-title">หมวดหมู่ : {selectedCategory.displayName}</h1>
 
       <div className="header-section">
@@ -175,18 +175,10 @@ const Vocabulary = () => {
 
         <span>No. {currentWordIndex + 1}/{vocabList.length}</span>
       </div>
-
-      <div className="vocab-display-container">
-        <div className="vocab-card mb-4 shadow-sm">
-          <div className="card-body">
-            <h1 className="vocab-word">
-              {highlightedWord}
-            </h1>
-            <h2 className="vocab-translation">{vocabList[currentWordIndex]?.translation}</h2>
-          </div>
-        </div>
+      <div className="vocab-card">
+        <h1 className="vocab-word">{highlightedWord}</h1>
+        <h2 className="vocab-translation">{vocabList[currentWordIndex]?.translation}</h2>
       </div>
-
       <div className="controls">
         <div className="input-controls">
           <div>

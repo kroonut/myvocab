@@ -1,8 +1,10 @@
 /* Default layout for wide screens */
 .random-vocab-container {
   display: flex;
-  align-items: center; /* Center content vertically */
-  justify-content: space-between; /* Space between content and buttons */
+  align-items: center;
+  /* Center content vertically */
+  justify-content: space-between;
+  /* Space between content and buttons */
   background-color: #ffffff;
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -15,21 +17,27 @@
 
 .random-vocab-content {
   display: flex;
-  align-items: center; /* Center items vertically */
-  justify-content: center; /* Center items horizontally */
-  gap: 10px; /* Add space between word and translation */
-  flex-grow: 1; /* Allow the content area to grow */
+  align-items: center;
+  /* Center items vertically */
+  justify-content: center;
+  /* Center items horizontally */
+  gap: 10px;
+  /* Add space between word and translation */
+  flex-grow: 1;
+  /* Allow the content area to grow */
 }
 
 .vocab-word {
   font-family: 'Poppins', 'Kanit';
-  font-size: 2rem; /* Larger size for emphasis */
+  font-size: 2rem;
+  /* Larger size for emphasis */
   font-weight: bold;
   color: blue;
 }
 
 .vocab-translation {
-  font-size: 2rem; /* Slightly smaller for translation */
+  font-size: 2rem;
+  /* Slightly smaller for translation */
   color: #707070;
 }
 
@@ -40,7 +48,9 @@
   align-items: center;
 }
 
-.play-button, .next-button, .speaker-button {
+.play-button,
+.next-button,
+.speaker-button {
   width: 40px;
   height: 40px;
   border: none;
@@ -69,12 +79,14 @@
   background-color: red;
 }
 
-.play-button:hover, .next-button:hover, .speaker-button:hover {
+.play-button:hover,
+.next-button:hover,
+.speaker-button:hover {
   opacity: 0.8;
 }
 
-.speaker-button:disabled, 
-.next-button:disabled, 
+.speaker-button:disabled,
+.next-button:disabled,
 .play-button:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
@@ -84,7 +96,8 @@
 /* Layout for small screens only */
 @media (max-width: 768px) {
   .random-vocab-container {
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column;
+    /* Stack elements vertically */
     align-items: center;
     height: auto;
     padding: 15px;
@@ -93,12 +106,14 @@
   .random-vocab-content {
     margin-bottom: 10px;
     width: 100%;
-    text-align: center; /* Center text */
+    text-align: center;
+    /* Center text */
     flex-direction: column;
   }
 
   .vocab-word {
-    font-size: 2rem; /* Larger for visibility */
+    font-size: 2rem;
+    /* Larger for visibility */
     font-weight: bold;
     margin-bottom: 5px;
     color: #0044cc;
@@ -112,11 +127,15 @@
   .button-group {
     width: 100%;
     justify-content: center;
-    gap: 5px; /* Reduced gap */
+    gap: 5px;
+    /* Reduced gap */
   }
 
-  .play-button, .next-button, .speaker-button {
-    width: 35px; /* Smaller buttons */
+  .play-button,
+  .next-button,
+  .speaker-button {
+    width: 35px;
+    /* Smaller buttons */
     height: 35px;
     font-size: 1rem;
   }

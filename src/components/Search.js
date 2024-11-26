@@ -44,9 +44,9 @@ const Search = () => {
     // Filter the vocabulary list based on both English (word) and Thai (translation)
     const filteredList = query
       ? allVocabList.filter(item =>
-          item.word.toLowerCase().includes(query) ||
-          item.translation.toLowerCase().includes(query)
-        )
+        item.word.toLowerCase().includes(query) ||
+        item.translation.toLowerCase().includes(query)
+      )
       : [];
 
     setFilteredVocabList(filteredList);
@@ -72,7 +72,7 @@ const Search = () => {
   };
 
   return (
-    <div className="container-fluid searchvocabcss">
+    <div className="searchvocabcss">
       <h1 className="title">ค้นหาคำศัพท์</h1>
 
       {/* Search Input */}

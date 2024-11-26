@@ -165,9 +165,9 @@ const Showcat = () => {
   }, []);
 
   return (
-    <div className="container-fluid">
+    <div className="vocab-container">
       <h1 className="vocab-title">หมวดหมู่ : {''}
-      {selectedCategory?.displayName || categoryName}
+        {selectedCategory?.displayName || categoryName}
       </h1>
 
       {/* Header Section */}
@@ -196,15 +196,10 @@ const Showcat = () => {
         <p className="text-center">ไม่พบคำศัพท์ในหมวดหมู่นี้</p>
       ) : (
         <>
-          <div className="vocab-display-container">
-            <div className="vocab-card mb-4 shadow-sm">
-              <div className="card-body">
-                <h1 className="vocab-word">{highlightedWord}</h1>
-                <h2 className="vocab-translation">{vocabList[currentWordIndex]?.translation}</h2>
-              </div>
-            </div>
+          <div className="vocab-card">
+            <h1 className="vocab-word">{highlightedWord}</h1>
+            <h2 className="vocab-translation">{vocabList[currentWordIndex]?.translation}</h2>
           </div>
-
           {/* Controls */}
           <div className="controls">
             <div className="input-controls">
@@ -274,7 +269,7 @@ const Showcat = () => {
           </div>
         </>
       )}
-    </div>
+    </div >
   );
 };
 

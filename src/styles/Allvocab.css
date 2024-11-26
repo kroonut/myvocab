@@ -15,6 +15,7 @@
   color: #333;
   padding: 5px;
 }
+
 /* Highlight number styles */
 .highlight-number {
   color: white;
@@ -22,6 +23,7 @@
   padding: 0 10px;
   border-radius: 10px;
 }
+
 .red-highlight {
   color: red;
 }
@@ -29,14 +31,19 @@
 /* Header Section */
 .allvocabcss .header-section {
   display: flex;
-  justify-content: center; /* Center elements horizontally */
-  align-items: center; /* Center elements vertically */
-  gap: 20px; /* Equal spacing between elements */
-  margin-bottom: 20px; /* Space between header and content below */
+  justify-content: center;
+  /* Center elements horizontally */
+  align-items: center;
+  /* Center elements vertically */
+  gap: 20px;
+  /* Equal spacing between elements */
+  margin-bottom: 20px;
+  /* Space between header and content below */
 }
 
 .allvocabcss .header-section select {
-  margin-right: 10px; /* Space between dropdown and count */
+  margin-right: 10px;
+  /* Space between dropdown and count */
 }
 
 .allvocabcss .header-section span {
@@ -46,25 +53,32 @@
 /* Responsive - Header Section (3 Rows on Small Screens) */
 @media (max-width: 768px) {
   .allvocabcss .header-section {
-    flex-direction: column; /* Stack elements vertically */
-    gap: 15px; /* Space between rows */
+    flex-direction: column;
+    /* Stack elements vertically */
+    gap: 15px;
+    /* Space between rows */
   }
 
-  .allvocabcss .header-section > * {
-    width: 100%; /* Make each element take up full width */
-    text-align: center; /* Center-align text */
+  .allvocabcss .header-section>* {
+    width: 100%;
+    /* Make each element take up full width */
+    text-align: center;
+    /* Center-align text */
   }
 
   .allvocabcss .header-section select {
-    max-width: 200px; /* Limit dropdown width */
-    margin: 0 auto; /* Center dropdown */
+    max-width: 200px;
+    /* Limit dropdown width */
+    margin: 0 auto;
+    /* Center dropdown */
   }
 }
 
 /* Vocabulary Card Container */
 .allvocabcss .vocab-card-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 columns layout */
   gap: 25px;
   padding: 5px;
   width: 100%;
@@ -90,8 +104,10 @@
 }
 
 .allvocabcss .vocab-card:hover {
-  transform: translateY(-5px); /* Slight lift on hover */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Deep shadow */
+  transform: translateY(-5px);
+  /* Slight lift on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  /* Deep shadow */
 }
 
 /* Category Badge - Top Left Corner */
@@ -105,7 +121,8 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
 }
 
 /* Index Badge - Top Right Corner */
@@ -124,7 +141,8 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
 }
 
 /* Card Content */
@@ -161,29 +179,35 @@
 }
 
 .allvocabcss .vocab-card-button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-  transform: translateY(-3px); /* Lift effect */
+  background-color: #0056b3;
+  /* Darker blue on hover */
+  transform: translateY(-3px);
+  /* Lift effect */
   cursor: pointer;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
   .allvocabcss .vocab-card-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns on medium screens */
   }
 }
 
 @media (max-width: 768px) {
   .allvocabcss .vocab-card-container {
-    grid-template-columns: 1fr; /* 1 column on small screens */
+    grid-template-columns: 1fr;
+    /* 1 column on small screens */
   }
 
   /* Adjust font size for small screens */
   .allvocabcss .vocab-card-title {
-    font-size: 1.5rem; /* Smaller font size for titles */
+    font-size: 1.5rem;
+    /* Smaller font size for titles */
   }
 
   .allvocabcss .vocab-card-text {
-    font-size: 1rem; /* Smaller font size for text */
+    font-size: 1rem;
+    /* Smaller font size for text */
   }
 }

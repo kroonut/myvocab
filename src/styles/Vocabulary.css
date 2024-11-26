@@ -1,8 +1,40 @@
-/* Reset and Box Sizing */
-*,
-*::before,
-*::after {
+/* Default layout for wide screens */
+.vocab-container {
+  display: grid;
+  gap: 25px;
+  padding: 5px;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
   box-sizing: border-box;
+}
+
+/* Main Vocabulary Card Styling */
+.vocab-card {
+  width: 100%;
+  /* ให้การ์ดขยายเต็มความกว้างของ container-fluid */
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: transform 0.2s ease;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 2px solid #e0e0e0;
+}
+
+.vocab-card h1 {
+  font-family: 'Poppins', 'Kanit';
+  font-size: 10vw;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+}
+
+.vocab-card h2 {
+  font-size: 2vw;
+  color: #333;
+  margin-top: 10px;
 }
 
 /* Center the Vocabulary List title */
@@ -31,37 +63,6 @@
 
 .header-section select {
   width: 120px;
-}
-
-/* Main Vocabulary Card Styling */
-.vocab-card {
-  width: 100%; /* ให้การ์ดขยายเต็มความกว้างของ container-fluid */
-  background-color: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  transition: transform 0.2s ease;
-  text-align: center;
-  margin-bottom: 20px;
-  border: 2px solid #e0e0e0;
-}
-
-.vocab-card:hover {
-  transform: scale(1.02);
-}
-
-.vocab-card h1 {
-  font-family: 'Poppins', 'Kanit';
-  font-size: 10vw;
-  font-weight: bold;
-  color: #000;
-  margin: 0;
-}
-
-.vocab-card h2 {
-  font-size: 2vw;
-  color: #333;
-  margin-top: 10px;
 }
 
 /* Controls Section */

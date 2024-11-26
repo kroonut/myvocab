@@ -29,26 +29,26 @@ const CategoriesList = () => {
   }, []);
 
   return (
-      <div className="categories-container">
-        {loading ? (
-          <div className="loading-indicator">กำลังโหลด...</div>
-        ) : (
-          config.categories.map((category) => (
-            <Link
-              to={`/showcat/${category.name}`} // Route to showcat page with category name
-              key={category.name}
-              className="category-link"
-            >
-              <button className="category-button medium-button">
-                <div className="button-content">
-                  <i className="fas fa-tag category-icon medium-icon"></i> {/* Tag Icon */}
-                  <span>{category.displayName} ({wordCounts[category.name] || "N/A"})</span>
-                </div>
-              </button>
-            </Link>
-          ))
-        )}
-      </div>
+    <div className="categories-container">
+      {loading ? (
+        <div className="loading-indicator">กำลังโหลด...</div>
+      ) : (
+        config.categories.map((category) => (
+          <Link
+            to={`/showcat/${category.name}`} // Route to showcat page with category name
+            key={category.name}
+            className="category-link"
+          >
+            <button className="category-button medium-button">
+              <div className="button-content">
+                <i className="fas fa-tag category-icon medium-icon"></i> {/* Tag Icon */}
+                <span>{category.displayName} ({wordCounts[category.name] || "N/A"})</span>
+              </div>
+            </button>
+          </Link>
+        ))
+      )}
+    </div>
   );
 };
 

@@ -111,31 +111,42 @@
 
 /* Centering Text and Cursor in Player Name Input */
 .name-input {
-  text-align: center; /* Centers the text and cursor */
-  padding: 0.5rem;    /* Adjusts padding for better vertical alignment */
-  font-size: 1rem;    /* Ensures consistent font size */
-  border-radius: 8px; /* Matches the styling of other buttons */
+  text-align: center;
+  /* Centers the text and cursor */
+  padding: 0.5rem;
+  /* Adjusts padding for better vertical alignment */
+  font-size: 1rem;
+  /* Ensures consistent font size */
+  border-radius: 8px;
+  /* Matches the styling of other buttons */
 }
 
 /* Responsive Design for Input Field */
 .mb-3.text-center input.name-input {
-  max-width: 300px; /* Adjust as needed */
+  max-width: 300px;
+  /* Adjust as needed */
   width: 100%;
-  margin: 0 auto;   /* Centers the input horizontally */
+  margin: 0 auto;
+  /* Centers the input horizontally */
 }
 
 /* Hover and Focus States for Input Field */
 .name-input:focus {
-  border: 2px solid #0056b3; /* Changes border color on focus */
-  outline: none;             /* Removes the default outline */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Adds a subtle shadow */
+  border: 2px solid #0056b3;
+  /* Changes border color on focus */
+  outline: none;
+  /* Removes the default outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  /* Adds a subtle shadow */
 }
 
 /* Placeholder Text Styling */
 .name-input::placeholder {
   text-align: center;
-  color: #6c757d; /* Bootstrap's default placeholder color */
-  opacity: 1;     /* Ensures full visibility */
+  color: #6c757d;
+  /* Bootstrap's default placeholder color */
+  opacity: 1;
+  /* Ensures full visibility */
 }
 
 /* Additional Styling for Buttons */

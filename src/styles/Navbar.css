@@ -3,10 +3,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.4rem 0.8rem; /* เพิ่ม padding เพื่อให้สูงพอดีกับข้อความ */
-  background-color: #fff; /* พื้นหลังสีขาว */
-  color: #333; /* ข้อความสีเข้ม */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+  padding: 0.4rem 0.8rem;
+  /* เพิ่ม padding เพื่อให้สูงพอดีกับข้อความ */
+  background-color: #fff;
+  /* พื้นหลังสีขาว */
+  color: #333;
+  /* ข้อความสีเข้ม */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* เพิ่มเงา */
 }
 
 .navbar-brand {
@@ -20,9 +24,11 @@
 }
 
 .navbar-logo {
-  width: 20px; /* ลดขนาดโลโก้ */
+  width: 20px;
+  /* ลดขนาดโลโก้ */
   height: auto;
-  margin-right: 0.5rem; /* ระยะห่างระหว่างโลโก้กับชื่อแบรนด์ */
+  margin-right: 0.5rem;
+  /* ระยะห่างระหว่างโลโก้กับชื่อแบรนด์ */
 }
 
 /* คงสีเข้มในทุกสถานะ */
@@ -49,7 +55,8 @@
 }
 
 .navbar-link:hover {
-  color: #007bff; /* สีฟ้าเมื่อ hover */
+  color: #007bff;
+  /* สีฟ้าเมื่อ hover */
 }
 
 /* ปุ่ม Hamburger */
