@@ -60,7 +60,12 @@ const Navbar = () => {
             <Link to="/VocabQuizGame" className="nav-link" onClick={toggleMenu}>
               <i className="fas fa-gamepad"></i> เกมส์
             </Link>
-          </li>          
+          </li>    
+          <li className="nav-item">
+            <Link to="/Manual" className="nav-link" onClick={toggleMenu}>
+              <i className="fas fa-gamepad"></i> Manual
+            </Link>
+          </li>        
         </ul>
       </div>
     </nav>

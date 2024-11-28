@@ -10,7 +10,8 @@ import Search from './components/Search';
 import RandomVocab from './components/RandomVocab';
 import CategoriesList from './components/CategoriesList';
 import VocabCardCat from './components/VocabCardCat'; // Import VocabCardCat
-import VocabQuizGame from './components/VocabQuizGame'
+import VocabQuizGame from './components/VocabQuizGame';
+import Manual from './components/Manual';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/vocabulary" element={<Vocabulary />} />
           <Route path="/CategoriesList" element={<CategoriesList />} />
           <Route path="/VocabQuizGame" element={<VocabQuizGame />} />
+          <Route path="/Manual" element={<Manual />} />
         </Routes>
       </div>
       <Footer /> {/* Add Footer here */}
