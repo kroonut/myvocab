@@ -23,9 +23,9 @@ function App() {
             path="/"
             element={
               <div className="home-page text-center">
-                <RandomVocab />
-                <CategoriesList />                
+                <RandomVocab />             
                 <VocabCardCat /> {/* Use VocabCardCat */}
+                <CategoriesList /> 
 
               </div>
             }

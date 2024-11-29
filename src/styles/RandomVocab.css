@@ -13,6 +13,7 @@
   padding: 10px 20px;
   margin: 20px auto;
   font-family: 'Kanit', sans-serif;
+  margin-top: 5px;
 }
 
 .random-vocab-content {
@@ -100,7 +101,7 @@
     /* Stack elements vertically */
     align-items: center;
     height: auto;
-    padding: 15px;
+
   }
 
   .random-vocab-content {
@@ -115,11 +116,12 @@
     font-size: 2rem;
     /* Larger for visibility */
     font-weight: bold;
-    margin-bottom: 5px;
+    margin: 0px;
     color: #0044cc;
   }
 
   .vocab-translation {
+    margin: 0px;
     font-size: 1.5rem;
     color: #333333;
   }
@@ -127,7 +129,7 @@
   .button-group {
     width: 100%;
     justify-content: center;
-    gap: 5px;
+    margin: 0px;
     /* Reduced gap */
   }
 
